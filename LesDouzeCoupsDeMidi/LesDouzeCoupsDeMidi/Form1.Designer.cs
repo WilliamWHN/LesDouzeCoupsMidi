@@ -64,6 +64,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblTimerGame = new System.Windows.Forms.Label();
             this.TimerGame = new System.Windows.Forms.Timer(this.components);
+            this.Question = new System.Windows.Forms.Label();
+            this.Answer1 = new System.Windows.Forms.Button();
+            this.Answer2 = new System.Windows.Forms.Button();
+            this.Answer3 = new System.Windows.Forms.Button();
+            this.Answer4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -421,7 +426,7 @@
             // lblTimerGame
             // 
             this.lblTimerGame.AutoSize = true;
-            this.lblTimerGame.Location = new System.Drawing.Point(96, 234);
+            this.lblTimerGame.Location = new System.Drawing.Point(1018, 9);
             this.lblTimerGame.Name = "lblTimerGame";
             this.lblTimerGame.Size = new System.Drawing.Size(29, 13);
             this.lblTimerGame.TabIndex = 163;
@@ -432,11 +437,83 @@
             // 
             this.TimerGame.Tick += new System.EventHandler(this.TimerGame_Tick);
             // 
+            // Question
+            // 
+            this.Question.AutoSize = true;
+            this.Question.BackColor = System.Drawing.Color.Transparent;
+            this.Question.Font = new System.Drawing.Font("Rockwell Condensed", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Question.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Question.Location = new System.Drawing.Point(79, 462);
+            this.Question.Name = "Question";
+            this.Question.Size = new System.Drawing.Size(63, 31);
+            this.Question.TabIndex = 164;
+            this.Question.Text = "label1";
+            // 
+            // Answer1
+            // 
+            this.Answer1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Answer1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Answer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Answer1.ForeColor = System.Drawing.Color.White;
+            this.Answer1.Location = new System.Drawing.Point(82, 516);
+            this.Answer1.Name = "Answer1";
+            this.Answer1.Size = new System.Drawing.Size(251, 38);
+            this.Answer1.TabIndex = 165;
+            this.Answer1.Text = "Answer1";
+            this.Answer1.UseVisualStyleBackColor = false;
+            this.Answer1.Click += new System.EventHandler(this.Answer1_Click);
+            // 
+            // Answer2
+            // 
+            this.Answer2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Answer2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Answer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Answer2.ForeColor = System.Drawing.Color.White;
+            this.Answer2.Location = new System.Drawing.Point(398, 516);
+            this.Answer2.Name = "Answer2";
+            this.Answer2.Size = new System.Drawing.Size(251, 38);
+            this.Answer2.TabIndex = 166;
+            this.Answer2.Text = "Answer2";
+            this.Answer2.UseVisualStyleBackColor = false;
+            // 
+            // Answer3
+            // 
+            this.Answer3.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Answer3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Answer3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Answer3.ForeColor = System.Drawing.Color.White;
+            this.Answer3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Answer3.Location = new System.Drawing.Point(82, 588);
+            this.Answer3.Name = "Answer3";
+            this.Answer3.Size = new System.Drawing.Size(251, 38);
+            this.Answer3.TabIndex = 167;
+            this.Answer3.Text = "Answer3";
+            this.Answer3.UseVisualStyleBackColor = false;
+            // 
+            // Answer4
+            // 
+            this.Answer4.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Answer4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Answer4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Answer4.ForeColor = System.Drawing.Color.White;
+            this.Answer4.Location = new System.Drawing.Point(398, 588);
+            this.Answer4.Name = "Answer4";
+            this.Answer4.Size = new System.Drawing.Size(251, 38);
+            this.Answer4.TabIndex = 168;
+            this.Answer4.Text = "Answer4";
+            this.Answer4.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1059, 577);
+            this.BackColor = System.Drawing.Color.Purple;
+            this.ClientSize = new System.Drawing.Size(1059, 697);
+            this.Controls.Add(this.Answer4);
+            this.Controls.Add(this.Answer3);
+            this.Controls.Add(this.Answer2);
+            this.Controls.Add(this.Answer1);
+            this.Controls.Add(this.Question);
             this.Controls.Add(this.lblTimerGame);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox30);
@@ -514,6 +591,11 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblTimerGame;
         private System.Windows.Forms.Timer TimerGame;
+        private System.Windows.Forms.Label Question;
+        private System.Windows.Forms.Button Answer1;
+        private System.Windows.Forms.Button Answer2;
+        private System.Windows.Forms.Button Answer3;
+        private System.Windows.Forms.Button Answer4;
     }
 }
 

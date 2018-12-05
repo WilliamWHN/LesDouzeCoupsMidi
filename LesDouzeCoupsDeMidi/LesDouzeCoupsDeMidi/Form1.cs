@@ -32,6 +32,7 @@ namespace LesDouzeCoupsDeMidi
         private int ms = 0;
         private int s = 0;
         private int m = 0;
+        private int question = 50;
         #endregion private attributes
 
         /// <summary>
@@ -40,7 +41,7 @@ namespace LesDouzeCoupsDeMidi
         public Form1()
         {
             InitializeComponent();
-            TimerGame.Interval = 1;
+            TimerGame.Interval = 1000;
             TimerGame.Start();
         }
 
@@ -54,9 +55,13 @@ namespace LesDouzeCoupsDeMidi
                 qst = new Question(line);
                 listQuestions.Add(qst);
             }
+            
+            Question.Text = listQuestions[question].getQuestion.ToString();
 
-            label1.Text = listQuestions[299].getQuestion.ToString() + listQuestions[299].Answers[2].ToString();
-       
+            Answer1.Text = listQuestions[question].Answers[0].ToString();
+            Answer2.Text = listQuestions[question].Answers[1].ToString();
+            Answer3.Text = listQuestions[question].Answers[2].ToString();
+            Answer4.Text = listQuestions[question].Answers[3].ToString();
         }
 
         /// <summary>
@@ -96,25 +101,25 @@ namespace LesDouzeCoupsDeMidi
         /// </summary>
         private void TimerGame_Tick(object sender, EventArgs e)
         {
-            //Test if the ms achieve 100
-            if (ms == 100)
-            {
-                s++;        //Increment the second
-                ms = 0;     //Set the ms as 0
-            }
-            else
-            {
-                ms++;       //Increment the ms
-            }
+           
             //Test if the second achieve 60
             if (s == 60)
             {
                 m++;        //Increment the minute
                 s = 0;      //Set the s as 0
             }
-            lblTimerGame.Text = m +":" + s +":" + ms; //Put the timer in a label
+            else
+            {
+                s++;
+            }
+            lblTimerGame.Text = m +":" + s; //Put the timer in a label
         }
 
-       
+  
+
+        private void Answer1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
