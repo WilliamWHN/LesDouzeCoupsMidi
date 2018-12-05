@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -61,7 +62,8 @@
             this.textBox29 = new System.Windows.Forms.TextBox();
             this.textBox30 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTimerGame = new System.Windows.Forms.Label();
+            this.TimerGame = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -416,22 +418,26 @@
             this.textBox1.Size = new System.Drawing.Size(77, 68);
             this.textBox1.TabIndex = 162;
             // 
-            // label1
+            // lblTimerGame
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(96, 234);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 163;
-            this.label1.Text = "labél";
-            this.label1.UseMnemonic = false;
+            this.lblTimerGame.AutoSize = true;
+            this.lblTimerGame.Location = new System.Drawing.Point(96, 234);
+            this.lblTimerGame.Name = "lblTimerGame";
+            this.lblTimerGame.Size = new System.Drawing.Size(29, 13);
+            this.lblTimerGame.TabIndex = 163;
+            this.lblTimerGame.Text = "labél";
+            this.lblTimerGame.UseMnemonic = false;
+            // 
+            // TimerGame
+            // 
+            this.TimerGame.Tick += new System.EventHandler(this.TimerGame_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1059, 577);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTimerGame);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox30);
             this.Controls.Add(this.textBox29);
@@ -506,7 +512,8 @@
         private System.Windows.Forms.TextBox textBox29;
         private System.Windows.Forms.TextBox textBox30;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTimerGame;
+        private System.Windows.Forms.Timer TimerGame;
     }
 }
 
