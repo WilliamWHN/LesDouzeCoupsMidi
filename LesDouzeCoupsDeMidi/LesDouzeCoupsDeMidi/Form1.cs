@@ -44,13 +44,13 @@ namespace LesDouzeCoupsDeMidi
         {
             rndShowCase();
             Question qst;
-            for(int line = 0; line < 10; line++)
+            for(int line = 0; line < 300; line++)
             {
                 qst = new Question(line);
                 listQuestions.Add(qst);
             }
 
-            label1.Text = listQuestions[0].getQuestion.ToString() + listQuestions[0].Answers[0].ToString();
+            label1.Text = listQuestions[299].getQuestion.ToString() + listQuestions[299].Answers[2].ToString();
        
         }
 
@@ -66,7 +66,7 @@ namespace LesDouzeCoupsDeMidi
             #endregion private attributes
             Random rnd = new Random();
             do{             
-                nbRnd = rnd.Next(1, 31); //Generate a random number
+                nbRnd = rnd.Next(1, 32); //Generate a random number
                 if (txtbAffichee.Contains(nbRnd)){ //If the random number exist already (the textbox generated is already hideen)
                     result = false;
                 }
