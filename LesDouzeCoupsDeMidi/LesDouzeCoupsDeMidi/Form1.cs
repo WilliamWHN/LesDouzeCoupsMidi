@@ -29,6 +29,9 @@ namespace LesDouzeCoupsDeMidi
         #region  private attributes
         private List<int> txtbAffichee = new List<int>();
         private List<Question> listQuestions = new List<Question>();
+        private int ms = 0;
+        private int s = 0;
+        private int m = 0;
         #endregion private attributes
 
         /// <summary>
@@ -37,6 +40,8 @@ namespace LesDouzeCoupsDeMidi
         public Form1()
         {
             InitializeComponent();
+            TimerGame.Interval = 1;
+            TimerGame.Start();
         }
 
 
@@ -44,13 +49,13 @@ namespace LesDouzeCoupsDeMidi
         {
             rndShowCase();
             Question qst;
-            for(int line = 0; line < 10; line++)
+            for(int line = 0; line < 2; line++)
             {
                 qst = new Question(line);
                 listQuestions.Add(qst);
             }
 
-            label1.Text = listQuestions[0].getQuestion.ToString() + listQuestions[0].Answers[0].ToString();
+            lblTimerGame.Text = listQuestions[0].getQuestion.ToString() + listQuestions[0].Answers[0].ToString();
        
         }
 
@@ -66,7 +71,7 @@ namespace LesDouzeCoupsDeMidi
             #endregion private attributes
             Random rnd = new Random();
             do{             
-                nbRnd = rnd.Next(1, 31); //Generate a random number
+                nbRnd = rnd.Next(1, 32); //Generate a random number
                 if (txtbAffichee.Contains(nbRnd)){ //If the random number exist already (the textbox generated is already hideen)
                     result = false;
                 }
@@ -84,5 +89,32 @@ namespace LesDouzeCoupsDeMidi
                 nbTextBox++;
             }
         }
+
+
+        /// <summary>
+        /// Display a timer in the game
+        /// </summary>
+        private void TimerGame_Tick(object sender, EventArgs e)
+        {
+            //Test if the ms achieve 100
+            if (ms == 100)
+            {
+                s++;        //Increment the second
+                ms = 0;     //Set the ms as 0
+            }
+            else
+            {
+                ms++;       //Increment the ms
+            }
+            //Test if the second achieve 60
+            if (s == 60)
+            {
+                m++;        //Increment the minute
+                s = 0;      //Set the s as 0
+            }
+            lblTimerGame.Text = m +":" + s +":" + ms; //Put the timer in a label
+        }
+
+       
     }
 }

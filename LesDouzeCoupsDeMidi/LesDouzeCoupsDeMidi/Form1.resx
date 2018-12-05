@@ -19849,4 +19849,7 @@
         I329s/mtudsc/wDNGKXv8g+FYFz/AAXavm7N8Z3xM03wOV2Wb35X8r6PK3YiI3R2ihULFn//2Q==
 </value>
   </data>
+  <metadata name="TimerGame.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
