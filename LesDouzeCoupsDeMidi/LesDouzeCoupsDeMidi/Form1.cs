@@ -20,6 +20,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 #endregion using references
 
 namespace LesDouzeCoupsDeMidi
@@ -32,7 +33,8 @@ namespace LesDouzeCoupsDeMidi
         private int ms = 0;
         private int s = 0;
         private int m = 0;
-        private int question = 50;
+        private int question = 0;
+        private int playerTry = 3;
         #endregion private attributes
 
         /// <summary>
@@ -115,11 +117,53 @@ namespace LesDouzeCoupsDeMidi
             lblTimerGame.Text = m +":" + s; //Put the timer in a label
         }
 
-  
+        private void CheckPlayerAnswer(string Answer)
+        {
+            Answer = Regex.Replace(Answer, "[^a-zA-Z0-9_]", "");
+            string TrueAnswer = listQuestions[question].getAnswer.ToString();
+            TrueAnswer = Regex.Replace(TrueAnswer, "[^a-zA-Z0-9_]", "");
+            if (TrueAnswer.Contains(Answer))
+            {
+                question++;
+                Question.Text = listQuestions[question].getQuestion.ToString();
+
+                Answer1.Text = listQuestions[question].Answers[0].ToString();
+                Answer2.Text = listQuestions[question].Answers[1].ToString();
+                Answer3.Text = listQuestions[question].Answers[2].ToString();
+                Answer4.Text = listQuestions[question].Answers[3].ToString();
+                rndShowCase();
+            }
+            else
+            {
+                playerTry--;
+            }
+            
+            if (playerTry == 0)
+            {
+                MessageBox.Show("Vous n'avez plus de vie. Vous avez perdu");
+                Application.Exit();
+                
+            }
+        }
 
         private void Answer1_Click(object sender, EventArgs e)
         {
+            CheckPlayerAnswer(Answer1.Text);
+        }
 
+        private void Answer2_Click(object sender, EventArgs e)
+        {
+            CheckPlayerAnswer(Answer2.Text);
+        }
+
+        private void Answer3_Click(object sender, EventArgs e)
+        {
+            CheckPlayerAnswer(Answer3.Text);          
+        }
+
+        private void Answer4_Click(object sender, EventArgs e)
+        {
+            CheckPlayerAnswer(Answer4.Text);
         }
     }
 }

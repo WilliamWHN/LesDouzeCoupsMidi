@@ -475,6 +475,7 @@
             this.Answer2.TabIndex = 166;
             this.Answer2.Text = "Answer2";
             this.Answer2.UseVisualStyleBackColor = false;
+            this.Answer2.Click += new System.EventHandler(this.Answer2_Click);
             // 
             // Answer3
             // 
@@ -489,6 +490,7 @@
             this.Answer3.TabIndex = 167;
             this.Answer3.Text = "Answer3";
             this.Answer3.UseVisualStyleBackColor = false;
+            this.Answer3.Click += new System.EventHandler(this.Answer3_Click);
             // 
             // Answer4
             // 
@@ -502,6 +504,7 @@
             this.Answer4.TabIndex = 168;
             this.Answer4.Text = "Answer4";
             this.Answer4.UseVisualStyleBackColor = false;
+            this.Answer4.Click += new System.EventHandler(this.Answer4_Click);
             // 
             // Form1
             // 
