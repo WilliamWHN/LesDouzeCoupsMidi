@@ -69,6 +69,13 @@
             this.Answer2 = new System.Windows.Forms.Button();
             this.Answer3 = new System.Windows.Forms.Button();
             this.Answer4 = new System.Windows.Forms.Button();
+            this.Aide = new System.Windows.Forms.Button();
+            this.AnswerImage = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Valider = new System.Windows.Forms.Button();
+            this.nbQuestion = new System.Windows.Forms.Label();
+            this.AcutalScore = new System.Windows.Forms.Label();
+            this.PlayerName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -506,12 +513,84 @@
             this.Answer4.UseVisualStyleBackColor = false;
             this.Answer4.Click += new System.EventHandler(this.Answer4_Click);
             // 
+            // Aide
+            // 
+            this.Aide.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Aide.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Aide.Location = new System.Drawing.Point(972, 627);
+            this.Aide.Name = "Aide";
+            this.Aide.Size = new System.Drawing.Size(75, 58);
+            this.Aide.TabIndex = 169;
+            this.Aide.Text = "?";
+            this.Aide.UseVisualStyleBackColor = false;
+            this.Aide.Click += new System.EventHandler(this.Aide_Click);
+            // 
+            // AnswerImage
+            // 
+            this.AnswerImage.Location = new System.Drawing.Point(845, 385);
+            this.AnswerImage.Name = "AnswerImage";
+            this.AnswerImage.Size = new System.Drawing.Size(153, 20);
+            this.AnswerImage.TabIndex = 170;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(536, 385);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(311, 22);
+            this.label1.TabIndex = 171;
+            this.label1.Text = "Entrez le nom de l\'image pour gagné :";
+            // 
+            // Valider
+            // 
+            this.Valider.Location = new System.Drawing.Point(739, 425);
+            this.Valider.Name = "Valider";
+            this.Valider.Size = new System.Drawing.Size(75, 23);
+            this.Valider.TabIndex = 172;
+            this.Valider.Text = "Valider";
+            this.Valider.UseVisualStyleBackColor = true;
+            // 
+            // nbQuestion
+            // 
+            this.nbQuestion.AutoSize = true;
+            this.nbQuestion.Location = new System.Drawing.Point(13, 672);
+            this.nbQuestion.Name = "nbQuestion";
+            this.nbQuestion.Size = new System.Drawing.Size(35, 13);
+            this.nbQuestion.TabIndex = 173;
+            this.nbQuestion.Text = "label2";
+            // 
+            // AcutalScore
+            // 
+            this.AcutalScore.AutoSize = true;
+            this.AcutalScore.Location = new System.Drawing.Point(12, 47);
+            this.AcutalScore.Name = "AcutalScore";
+            this.AcutalScore.Size = new System.Drawing.Size(78, 13);
+            this.AcutalScore.TabIndex = 174;
+            this.AcutalScore.Text = "Correct answer";
+            // 
+            // PlayerName
+            // 
+            this.PlayerName.AutoSize = true;
+            this.PlayerName.Location = new System.Drawing.Point(13, 8);
+            this.PlayerName.Name = "PlayerName";
+            this.PlayerName.Size = new System.Drawing.Size(67, 13);
+            this.PlayerName.TabIndex = 175;
+            this.PlayerName.Text = "Name Player";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Purple;
+            this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(1059, 697);
+            this.Controls.Add(this.PlayerName);
+            this.Controls.Add(this.AcutalScore);
+            this.Controls.Add(this.nbQuestion);
+            this.Controls.Add(this.Valider);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.AnswerImage);
+            this.Controls.Add(this.Aide);
             this.Controls.Add(this.Answer4);
             this.Controls.Add(this.Answer3);
             this.Controls.Add(this.Answer2);
@@ -599,6 +678,13 @@
         private System.Windows.Forms.Button Answer2;
         private System.Windows.Forms.Button Answer3;
         private System.Windows.Forms.Button Answer4;
+        private System.Windows.Forms.Button Aide;
+        private System.Windows.Forms.TextBox AnswerImage;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Valider;
+        private System.Windows.Forms.Label nbQuestion;
+        private System.Windows.Forms.Label AcutalScore;
+        private System.Windows.Forms.Label PlayerName;
     }
 }
 
