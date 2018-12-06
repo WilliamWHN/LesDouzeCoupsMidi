@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace LesDouzeCoupsDeMidi
 {
@@ -16,7 +17,7 @@ namespace LesDouzeCoupsDeMidi
         public Question(int line)
         {
             this.line = line;
-            CsvReader csvreader = new CsvReader(@"C:\LesDouzeCoupsMidi\LesDouzeCoupsDeMidi\LesDouzeCoupsDeMidi\Questions.csv");
+            CsvReader csvreader = new CsvReader(Directory.GetCurrentDirectory() + @"\..\..\Questions.csv");
             this.question = csvreader.GetQuestion(line);
             this.answer = csvreader.GetAnswer(line);
             this.answers = csvreader.GetAnswers(line);

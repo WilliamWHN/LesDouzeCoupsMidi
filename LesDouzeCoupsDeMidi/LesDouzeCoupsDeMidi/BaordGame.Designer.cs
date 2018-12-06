@@ -1,6 +1,6 @@
 ﻿namespace LesDouzeCoupsDeMidi
 {
-    partial class Form1
+    partial class BaordGame
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaordGame));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtB = new System.Windows.Forms.TextBox();
@@ -91,7 +91,6 @@
             this.button1.TabIndex = 101;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtB
             // 
@@ -507,7 +506,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Purple;
+            this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(1059, 697);
             this.Controls.Add(this.Answer4);
             this.Controls.Add(this.Answer3);

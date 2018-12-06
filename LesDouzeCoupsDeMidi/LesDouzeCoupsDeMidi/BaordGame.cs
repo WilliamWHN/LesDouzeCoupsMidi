@@ -24,7 +24,7 @@ using System.Diagnostics;
 
 namespace LesDouzeCoupsDeMidi
 {
-    public partial class Form1 : Form
+    public partial class BaordGame : Form
     {
         #region  private attributes
         private List<int> txtbAffichee = new List<int>();
@@ -38,26 +38,29 @@ namespace LesDouzeCoupsDeMidi
         /// <summary>
         /// Form's constructor
         /// </summary>
-        public Form1()
-        {
+        public BaordGame()
+        {        
             InitializeComponent();
             TimerGame.Interval = 1000;
             TimerGame.Start();
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        public void Play()
         {
-            rndShowCase();
             Question qst;
             for(int line = 0; line < 300; line++)
             {
                 qst = new Question(line);
                 listQuestions.Add(qst);
             }
-            
-            Question.Text = listQuestions[question].getQuestion.ToString();
 
+            DisplayQuestion();
+        }
+
+        private void DisplayQuestion()
+        {
+            Question.Text = listQuestions[question].getQuestion.ToString();
             Answer1.Text = listQuestions[question].Answers[0].ToString();
             Answer2.Text = listQuestions[question].Answers[1].ToString();
             Answer3.Text = listQuestions[question].Answers[2].ToString();
