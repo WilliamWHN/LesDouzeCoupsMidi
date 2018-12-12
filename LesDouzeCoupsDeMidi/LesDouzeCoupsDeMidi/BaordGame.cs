@@ -79,7 +79,7 @@ namespace LesDouzeCoupsDeMidi
         private void rndShowCase()
         {
             #region  private attributes
-            int nbTextBox = 1;
+            int nbTextBox = 0;
             bool result = false;           
             int nbRnd;
             #endregion private attributes
@@ -133,33 +133,23 @@ namespace LesDouzeCoupsDeMidi
             {
                 question++;
                 CorrectAnswer++;
-                Question.Text = listQuestions[question].getQuestion.ToString();
-
-                Answer1.Text = listQuestions[question].Answers[0].ToString();
-                Answer2.Text = listQuestions[question].Answers[1].ToString();
-                Answer3.Text = listQuestions[question].Answers[2].ToString();
-                Answer4.Text = listQuestions[question].Answers[3].ToString();
+                DisplayQuestion();
                 rndShowCase();
             }
             else
             {               
                 question++;
-                Question.Text = listQuestions[question].getQuestion.ToString();
-
-                Answer1.Text = listQuestions[question].Answers[0].ToString();
-                Answer2.Text = listQuestions[question].Answers[1].ToString();
-                Answer3.Text = listQuestions[question].Answers[2].ToString();
-                Answer4.Text = listQuestions[question].Answers[3].ToString();
+                DisplayQuestion();
 
                 MessageBox.Show("Mauvaise réponse !");
             }
             nbQuestion.Text = "Question " + question + "/30";
             AcutalScore.Text = "Bonne réponse : " +CorrectAnswer + "/30";
             PlayerName.Text = "Jeu de " + playername;
-            Answer1.Visible = true;
-            Answer2.Visible = true;
-            Answer3.Visible = true;
-            Answer4.Visible = true;
+            Answer1.Enabled = true;
+            Answer2.Enabled = true;
+            Answer3.Enabled = true;
+            Answer4.Enabled = true;
         }
 
         private void Answer1_Click(object sender, EventArgs e)
@@ -225,6 +215,7 @@ namespace LesDouzeCoupsDeMidi
                     }
                 nbButton++;
             }
+            JFiftyFifty.Visible = false;
 
         }
 
