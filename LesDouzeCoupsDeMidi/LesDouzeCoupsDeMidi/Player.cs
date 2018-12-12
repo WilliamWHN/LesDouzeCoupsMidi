@@ -14,7 +14,9 @@ namespace LesDouzeCoupsDeMidi
 
         public Player(string nickname, int score, TimeSpan elapsedTime)
         {
-              
+            this.nickname = nickname;
+            this.score = score;
+            this.elapsedTime = elapsedTime;
         }   
 
         public string getNickName

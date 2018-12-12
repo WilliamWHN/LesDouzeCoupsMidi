@@ -21,6 +21,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using System.Security.Cryptography;
 #endregion using references
 
 namespace LesDouzeCoupsDeMidi
@@ -43,23 +44,22 @@ namespace LesDouzeCoupsDeMidi
         /// Form's constructor
         /// </summary>
         public BaordGame()
-        {        
+        {
             InitializeComponent();
             TimerGame.Interval = 1000;
             TimerGame.Start();
-       
         }
 
 
         public void Play()
         {
             Question qst;
-            for(int line = 0; line < 300; line++)
+            for (int line = 0; line < 300; line++)
             {
                 qst = new Question(line);
                 listQuestions.Add(qst);
             }
-
+            listQuestions.Shuffle<Question>();
             DisplayQuestion();
         }
 
@@ -70,7 +70,7 @@ namespace LesDouzeCoupsDeMidi
             Answer2.Text = listQuestions[question].Answers[1].ToString();
             Answer3.Text = listQuestions[question].Answers[2].ToString();
             Answer4.Text = listQuestions[question].Answers[3].ToString();
-           
+
         }
 
         /// <summary>
@@ -79,38 +79,44 @@ namespace LesDouzeCoupsDeMidi
         private void rndShowCase()
         {
             #region  private attributes
-            int nbTextBox = 0;
-            bool result = false;           
+            int nbTextBox = 1;
+            bool result = false;
             int nbRnd;
             #endregion private attributes
             Random rnd = new Random();
-            do{             
-                nbRnd = rnd.Next(1, 32); //Generate a random number
-                if (txtbAffichee.Contains(nbRnd)){ //If the random number exist already (the textbox generated is already hideen)
+            do
+            {
+                nbRnd = rnd.Next(1, 31); //Generate a random number
+                if (txtbAffichee.Contains(nbRnd))
+                { //If the random number exist already (the textbox generated is already hideen)
                     result = false;
                 }
-                else{
+                else
+                {
                     result = true;
                 }
 
             } while (!result); //while result is false re-generate a number and check it
             txtbAffichee.Add(nbRnd); //puts de right number in a list for checking
 
-            foreach (Control x in this.Controls){
-                if (x is TextBox && nbTextBox == nbRnd){ //if the control is a textbox and the random number match the nbTextBox              
+            foreach (Control x in this.Controls)
+            {
+                if (x is TextBox && nbTextBox == nbRnd)
+                { //if the control is a textbox and the random number match the nbTextBox              
                     x.Visible = false; //Hide the textbox who match with the random number
                 }
-                nbTextBox++;
+                if(x is TextBox)
+                {
+                    nbTextBox++;
+                }
             }
         }
-
-
         /// <summary>
         /// Display a timer in the game
         /// </summary>
         private void TimerGame_Tick(object sender, EventArgs e)
         {
-           
+
             //Test if the second achieve 60
             if (s == 60)
             {
@@ -121,7 +127,7 @@ namespace LesDouzeCoupsDeMidi
             {
                 s++;
             }
-            lblTimerGame.Text = m +":" + s; //Put the timer in a label
+            lblTimerGame.Text = m + ":" + s; //Put the timer in a label
         }
 
         private void CheckPlayerAnswer(string Answer)
@@ -137,14 +143,14 @@ namespace LesDouzeCoupsDeMidi
                 rndShowCase();
             }
             else
-            {               
+            {
                 question++;
                 DisplayQuestion();
 
                 MessageBox.Show("Mauvaise réponse !");
             }
             nbQuestion.Text = "Question " + question + "/30";
-            AcutalScore.Text = "Bonne réponse : " +CorrectAnswer + "/30";
+            AcutalScore.Text = "Bonne réponse : " + CorrectAnswer + "/30";
             PlayerName.Text = "Jeu de " + playername;
             Answer1.Enabled = true;
             Answer2.Enabled = true;
@@ -164,7 +170,7 @@ namespace LesDouzeCoupsDeMidi
 
         private void Answer3_Click(object sender, EventArgs e)
         {
-            CheckPlayerAnswer(Answer3.Text);          
+            CheckPlayerAnswer(Answer3.Text);
         }
 
         private void Answer4_Click(object sender, EventArgs e)
@@ -209,15 +215,32 @@ namespace LesDouzeCoupsDeMidi
             nbButton = 1;
             foreach (Control ctrl in tblAnswers.Controls)
             {
-                    if(ctrl.Text != TrueAnswer && nbsRand.Contains(nbButton))
-                    {
-                        ctrl.Enabled = false;
-                    }
+                if (ctrl.Text != TrueAnswer && nbsRand.Contains(nbButton))
+                {
+                    ctrl.Enabled = false;
+                }
                 nbButton++;
             }
             JFiftyFifty.Visible = false;
-
         }
+    }
 
+
+    static class Randomize
+    {
+        private static Random rng = new Random();
+
+        public static void Shuffle<T>(this IList<T> list)
+        {
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+        }
     }
 }
