@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaordGame));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtB = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -76,6 +75,9 @@
             this.nbQuestion = new System.Windows.Forms.Label();
             this.AcutalScore = new System.Windows.Forms.Label();
             this.PlayerName = new System.Windows.Forms.Label();
+            this.JFiftyFifty = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tblAnswers = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,15 +91,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(82, 121);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 101;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // txtB
             // 
@@ -475,7 +468,7 @@
             this.Answer2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Answer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Answer2.ForeColor = System.Drawing.Color.White;
-            this.Answer2.Location = new System.Drawing.Point(398, 516);
+            this.Answer2.Location = new System.Drawing.Point(337, 516);
             this.Answer2.Name = "Answer2";
             this.Answer2.Size = new System.Drawing.Size(251, 38);
             this.Answer2.TabIndex = 166;
@@ -490,7 +483,7 @@
             this.Answer3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Answer3.ForeColor = System.Drawing.Color.White;
             this.Answer3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Answer3.Location = new System.Drawing.Point(82, 588);
+            this.Answer3.Location = new System.Drawing.Point(82, 557);
             this.Answer3.Name = "Answer3";
             this.Answer3.Size = new System.Drawing.Size(251, 38);
             this.Answer3.TabIndex = 167;
@@ -504,7 +497,7 @@
             this.Answer4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Answer4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Answer4.ForeColor = System.Drawing.Color.White;
-            this.Answer4.Location = new System.Drawing.Point(398, 588);
+            this.Answer4.Location = new System.Drawing.Point(337, 557);
             this.Answer4.Name = "Answer4";
             this.Answer4.Size = new System.Drawing.Size(251, 38);
             this.Answer4.TabIndex = 168;
@@ -577,12 +570,49 @@
             this.PlayerName.TabIndex = 175;
             this.PlayerName.Text = "Name Player";
             // 
-            // Form1
+            // JFiftyFifty
+            // 
+            this.JFiftyFifty.Location = new System.Drawing.Point(972, 471);
+            this.JFiftyFifty.Name = "JFiftyFifty";
+            this.JFiftyFifty.Size = new System.Drawing.Size(75, 22);
+            this.JFiftyFifty.TabIndex = 177;
+            this.JFiftyFifty.Text = "50/50";
+            this.JFiftyFifty.UseVisualStyleBackColor = true;
+            this.JFiftyFifty.Click += new System.EventHandler(this.JFiftyFifty_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel1.TabIndex = 178;
+            // 
+            // tblAnswers
+            // 
+            this.tblAnswers.AutoSize = true;
+            this.tblAnswers.ColumnCount = 2;
+            this.tblAnswers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.38462F));
+            this.tblAnswers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.61538F));
+            this.tblAnswers.Location = new System.Drawing.Point(73, 507);
+            this.tblAnswers.Name = "tblAnswers";
+            this.tblAnswers.RowCount = 2;
+            this.tblAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48F));
+            this.tblAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52F));
+            this.tblAnswers.Size = new System.Drawing.Size(520, 98);
+            this.tblAnswers.TabIndex = 179;
+            // 
+            // BaordGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(1059, 697);
+            this.Controls.Add(this.Answer4);
+            this.Controls.Add(this.Answer2);
+            this.Controls.Add(this.Answer1);
+            this.Controls.Add(this.Answer3);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.JFiftyFifty);
             this.Controls.Add(this.PlayerName);
             this.Controls.Add(this.AcutalScore);
             this.Controls.Add(this.nbQuestion);
@@ -590,10 +620,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AnswerImage);
             this.Controls.Add(this.Aide);
-            this.Controls.Add(this.Answer4);
-            this.Controls.Add(this.Answer3);
-            this.Controls.Add(this.Answer2);
-            this.Controls.Add(this.Answer1);
             this.Controls.Add(this.Question);
             this.Controls.Add(this.lblTimerGame);
             this.Controls.Add(this.textBox1);
@@ -626,9 +652,9 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.txtB);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Form1";
+            this.Controls.Add(this.tblAnswers);
+            this.Name = "BaordGame";
             this.Text = "Jeu DouzeCoups";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -639,7 +665,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtB;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
@@ -684,6 +709,9 @@
         private System.Windows.Forms.Label nbQuestion;
         private System.Windows.Forms.Label AcutalScore;
         private System.Windows.Forms.Label PlayerName;
+        private System.Windows.Forms.Button JFiftyFifty;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tblAnswers;
     }
 }
 

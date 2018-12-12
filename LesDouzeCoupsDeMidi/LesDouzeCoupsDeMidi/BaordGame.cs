@@ -156,6 +156,10 @@ namespace LesDouzeCoupsDeMidi
             nbQuestion.Text = "Question " + question + "/30";
             AcutalScore.Text = "Bonne réponse : " +CorrectAnswer + "/30";
             PlayerName.Text = "Jeu de " + playername;
+            Answer1.Visible = true;
+            Answer2.Visible = true;
+            Answer3.Visible = true;
+            Answer4.Visible = true;
         }
 
         private void Answer1_Click(object sender, EventArgs e)
@@ -183,6 +187,46 @@ namespace LesDouzeCoupsDeMidi
             MessageBox.Show("Règles du jeu:\n\nRépondez à la question en cliquant sur une des quatres réponses\n\nSi vous répondez la bonne réponse un partie de l'image se dévoile !\nSinon rien ne se passe et vous passez à la question suivante.\n\nPour gagner entrer le nom de l'image dans le champ texte une fois que vous savez de quoi il s'agit.\nSi vous vous trompez votre vie diminue.\n\nVous avez trois vie. Si vos vie atteigne 0 vous avez perdu.\n\n\nBonne chance !");
         }
 
-   
+        private void JFiftyFifty_Click(object sender, EventArgs e)
+        {
+            int nbButton = 1;
+            int nbRand;
+            int[] nbsRand = new int[2];
+            int nbButtonTrueAnswer = 0;
+            string TrueAnswer = listQuestions[question].getAnswer.ToString();
+
+            tblAnswers.Controls.Add(Answer1); tblAnswers.Controls.Add(Answer2); tblAnswers.Controls.Add(Answer3); tblAnswers.Controls.Add(Answer4);
+
+            foreach (Control ctrl in tblAnswers.Controls)
+            {
+                if (ctrl.Text == TrueAnswer)
+                {
+                    nbButtonTrueAnswer = nbButton;
+                }
+                nbButton++;
+            }
+            Random QuestionRandom = new Random();
+            nbsRand[0] = nbButtonTrueAnswer;
+            for (int i = 0; i < 2; i++)
+            {
+                do
+                {
+                    nbRand = QuestionRandom.Next(1, 5);
+                } while (nbRand == nbButtonTrueAnswer || nbsRand.Contains(nbRand));
+                nbsRand[i] = nbRand;
+            }
+
+            nbButton = 1;
+            foreach (Control ctrl in tblAnswers.Controls)
+            {
+                    if(ctrl.Text != TrueAnswer && nbsRand.Contains(nbButton))
+                    {
+                        ctrl.Enabled = false;
+                    }
+                nbButton++;
+            }
+
+        }
+
     }
 }
