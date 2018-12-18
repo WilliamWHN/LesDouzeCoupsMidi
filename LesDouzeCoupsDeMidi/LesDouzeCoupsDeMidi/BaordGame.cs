@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Threading;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Security.Cryptography;
+using WMPLib;
 #endregion using references
 
 namespace LesDouzeCoupsDeMidi
@@ -31,9 +33,11 @@ namespace LesDouzeCoupsDeMidi
         #region  private attributes
         private List<int> txtbAffichee = new List<int>();
         private List<Question> listQuestions = new List<Question>();
+        private WindowsMediaPlayer MusicPlayer = new WindowsMediaPlayer();
         private int ms = 0;
         private int s = 0;
         private int m = 0;
+        private bool[] arrayBoolButton = new bool[] {true,true,true,true};
         private int question = 0;
         private int playerTry = 3;
         private string playername;
@@ -46,6 +50,7 @@ namespace LesDouzeCoupsDeMidi
         public BaordGame()
         {
             InitializeComponent();
+            tblAnswers.Controls.Add(Answer1); tblAnswers.Controls.Add(Answer2); tblAnswers.Controls.Add(Answer3); tblAnswers.Controls.Add(Answer4);
             TimerGame.Interval = 1000;
             TimerGame.Start();
         }
@@ -60,12 +65,27 @@ namespace LesDouzeCoupsDeMidi
                 listQuestions.Add(qst);
             }
             listQuestions.Shuffle<Question>();
+            listQuestions.RemoveRange(30, listQuestions.Count() - 30);
             DisplayQuestion();
+            nbQuestion.Text = "Question " + question + "/30";
+            AcutalScore.Text = "Bonne réponse : " + CorrectAnswer + "/30";
+            PlayerName.Text = "Jeu de " + playername;
         }
 
         private void DisplayQuestion()
         {
-            Question.Text = listQuestions[question].getQuestion.ToString();
+            nbQuestion.Text = "Question " + question + "/30";
+            AcutalScore.Text = "Bonne réponse : " + CorrectAnswer + "/30";
+            PlayerName.Text = "Jeu de " + playername;
+            Answer1.Enabled = true;
+            Answer2.Enabled = true;
+            Answer3.Enabled = true;
+            Answer4.Enabled = true;
+            Answer1.BackColor = Color.RoyalBlue;
+            Answer2.BackColor = Color.RoyalBlue;
+            Answer3.BackColor = Color.RoyalBlue;
+            Answer4.BackColor = Color.RoyalBlue;
+            rtxtbQuestion.Text = listQuestions[question].getQuestion.ToString();
             Answer1.Text = listQuestions[question].Answers[0].ToString();
             Answer2.Text = listQuestions[question].Answers[1].ToString();
             Answer3.Text = listQuestions[question].Answers[2].ToString();
@@ -134,48 +154,216 @@ namespace LesDouzeCoupsDeMidi
         {
             Answer = Regex.Replace(Answer, "[^a-zA-Z0-9_]", "");
             string TrueAnswer = listQuestions[question].getAnswer.ToString();
+            string ex = TrueAnswer;
             TrueAnswer = Regex.Replace(TrueAnswer, "[^a-zA-Z0-9_]", "");
             if (TrueAnswer.Contains(Answer))
             {
                 question++;
                 CorrectAnswer++;
-                DisplayQuestion();
                 rndShowCase();
+                throw new Exception(ex);
             }
             else
             {
                 question++;
-                DisplayQuestion();
+                throw new Exception(ex);
+            }           
+        }
 
-                MessageBox.Show("Mauvaise réponse !");
+        private async void Answer1_Click(object sender, EventArgs e)
+        {
+            if (arrayBoolButton[0])
+            {
+                int nbButton = 1;
+                int nbButtonTrueAnswer = 0;
+                try
+                {
+                    CheckPlayerAnswer(Answer1.Text);
+                }
+                catch (Exception ex)
+                {
+                    if (Answer1.Text != ex.Message)
+                    {
+                        Answer1.BackColor = Color.Red;
+                    }
+                    foreach (Control ctrl in tblAnswers.Controls)
+                    {
+                        if (ctrl.Text == ex.Message)
+                        {
+                            nbButtonTrueAnswer = nbButton;
+                        }
+                        nbButton++;
+                    }
+                    switch (nbButtonTrueAnswer)
+                    {
+                        case 1:
+                            Answer1.BackColor = Color.Green;
+                            break;
+                        case 2:
+                            Answer2.BackColor = Color.Green;
+                            break;
+                        case 3:
+                            Answer3.BackColor = Color.Green;
+                            break;
+                        case 4:
+                            Answer4.BackColor = Color.Green;
+                            break;
+                        default:
+                            Console.WriteLine("Default case");
+                            break;
+                    }
+                    var cancellationToken = new CancellationTokenSource().Token;
+                    for (int i = 0; i < 4; i++) { arrayBoolButton[i] = false; }
+                    await Task.Delay(1500, cancellationToken);
+                    for (int i = 0; i < 4; i++) { arrayBoolButton[i] = true; }
+                    DisplayQuestion();
+                }
             }
-            nbQuestion.Text = "Question " + question + "/30";
-            AcutalScore.Text = "Bonne réponse : " + CorrectAnswer + "/30";
-            PlayerName.Text = "Jeu de " + playername;
-            Answer1.Enabled = true;
-            Answer2.Enabled = true;
-            Answer3.Enabled = true;
-            Answer4.Enabled = true;
         }
 
-        private void Answer1_Click(object sender, EventArgs e)
+        private async void Answer2_Click(object sender, EventArgs e)
         {
-            CheckPlayerAnswer(Answer1.Text);
+            if (arrayBoolButton[1])
+            {
+                int nbButton = 1;
+                int nbButtonTrueAnswer = 0;
+                try
+                {
+                    CheckPlayerAnswer(Answer2.Text);
+                }
+                catch (Exception ex)
+                {
+                    Answer2.BackColor = Color.Red;
+                    foreach (Control ctrl in tblAnswers.Controls)
+                    {
+                        if (ctrl.Text == ex.Message)
+                        {
+                            nbButtonTrueAnswer = nbButton;
+                        }
+                        nbButton++;
+                    }
+                    switch (nbButtonTrueAnswer)
+                    {
+                        case 1:
+                            Answer1.BackColor = Color.Green;
+                            break;
+                        case 2:
+                            Answer2.BackColor = Color.Green;
+                            break;
+                        case 3:
+                            Answer3.BackColor = Color.Green;
+                            break;
+                        case 4:
+                            Answer4.BackColor = Color.Green;
+                            break;
+                        default:
+                            Console.WriteLine("Default case");
+                            break;
+                    }
+                    var cancellationToken = new CancellationTokenSource().Token;
+                    for (int i = 0; i < 4; i++) { arrayBoolButton[i] = false; }
+                    await Task.Delay(1500, cancellationToken);
+                    for (int i = 0; i < 4; i++) { arrayBoolButton[i] = true; }
+                    DisplayQuestion();
+                }
+            }
         }
 
-        private void Answer2_Click(object sender, EventArgs e)
+        private async void Answer3_Click(object sender, EventArgs e)
         {
-            CheckPlayerAnswer(Answer2.Text);
+            if (arrayBoolButton[3])
+            {
+                int nbButton = 1;
+                int nbButtonTrueAnswer = 0;
+                try
+                {
+                    CheckPlayerAnswer(Answer3.Text);
+                }
+                catch (Exception ex)
+                {
+                    Answer3.BackColor = Color.Red;
+                    foreach (Control ctrl in tblAnswers.Controls)
+                    {
+                        if (ctrl.Text == ex.Message)
+                        {
+                            nbButtonTrueAnswer = nbButton;
+                        }
+                        nbButton++;
+                    }
+                    switch (nbButtonTrueAnswer)
+                    {
+                        case 1:
+                            Answer1.BackColor = Color.Green;
+                            break;
+                        case 2:
+                            Answer2.BackColor = Color.Green;
+                            break;
+                        case 3:
+                            Answer3.BackColor = Color.Green;
+                            break;
+                        case 4:
+                            Answer4.BackColor = Color.Green;
+                            break;
+                        default:
+                            Console.WriteLine("Default case");
+                            break;
+                    }
+                    var cancellationToken = new CancellationTokenSource().Token;
+                    for (int i = 0; i < 4; i++) { arrayBoolButton[i] = false; }
+                    await Task.Delay(1500, cancellationToken);
+                    for (int i = 0; i < 4; i++) { arrayBoolButton[i] = true; }
+                    DisplayQuestion();
+                }
+            }
         }
 
-        private void Answer3_Click(object sender, EventArgs e)
+        private async void Answer4_Click(object sender, EventArgs e)
         {
-            CheckPlayerAnswer(Answer3.Text);
-        }
-
-        private void Answer4_Click(object sender, EventArgs e)
-        {
-            CheckPlayerAnswer(Answer4.Text);
+            if (arrayBoolButton[3])
+            {
+                int nbButton = 1;
+                int nbButtonTrueAnswer = 0;
+                try
+                {
+                    CheckPlayerAnswer(Answer4.Text);
+                }
+                catch (Exception ex)
+                {
+                    Answer4.BackColor = Color.Red;
+                    foreach (Control ctrl in tblAnswers.Controls)
+                    {
+                        if (ctrl.Text == ex.Message)
+                        {
+                            nbButtonTrueAnswer = nbButton;
+                        }
+                        nbButton++;
+                    }
+                    switch (nbButtonTrueAnswer)
+                    {
+                        case 1:
+                            Answer1.BackColor = Color.Green;
+                            break;
+                        case 2:
+                            Answer2.BackColor = Color.Green;
+                            break;
+                        case 3:
+                            Answer3.BackColor = Color.Green;
+                            break;
+                        case 4:
+                            Answer4.BackColor = Color.Green;
+                            break;
+                        default:
+                            Console.WriteLine("Default case");
+                            break;
+                    }
+                    var cancellationToken = new CancellationTokenSource().Token;
+                    for(int i = 0; i < 4; i++) { arrayBoolButton[i] = false; }
+                    await Task.Delay(1500, cancellationToken);
+                    for (int i = 0; i < 4; i++) { arrayBoolButton[i] = true; }
+                    DisplayQuestion();
+                }
+            }
+            
         }
 
         private void Aide_Click(object sender, EventArgs e)
@@ -190,8 +378,6 @@ namespace LesDouzeCoupsDeMidi
             int[] nbsRand = new int[2];
             int nbButtonTrueAnswer = 0;
             string TrueAnswer = listQuestions[question].getAnswer.ToString();
-
-            tblAnswers.Controls.Add(Answer1); tblAnswers.Controls.Add(Answer2); tblAnswers.Controls.Add(Answer3); tblAnswers.Controls.Add(Answer4);
 
             foreach (Control ctrl in tblAnswers.Controls)
             {
