@@ -70,7 +70,6 @@
             this.Aide = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Valider = new System.Windows.Forms.Button();
-            this.nbQuestion = new System.Windows.Forms.Label();
             this.AcutalScore = new System.Windows.Forms.Label();
             this.PlayerName = new System.Windows.Forms.Label();
             this.JFiftyFifty = new System.Windows.Forms.Button();
@@ -78,7 +77,8 @@
             this.flwpTextBox = new System.Windows.Forms.FlowLayoutPanel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.rtxtbQuestion = new System.Windows.Forms.RichTextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.pbQuestion = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -594,17 +594,6 @@
             this.Valider.Text = "✔";
             this.Valider.UseVisualStyleBackColor = true;
             // 
-            // nbQuestion
-            // 
-            this.nbQuestion.AutoSize = true;
-            this.nbQuestion.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.nbQuestion.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nbQuestion.Location = new System.Drawing.Point(315, 801);
-            this.nbQuestion.Name = "nbQuestion";
-            this.nbQuestion.Size = new System.Drawing.Size(42, 18);
-            this.nbQuestion.TabIndex = 173;
-            this.nbQuestion.Text = "label2";
-            // 
             // AcutalScore
             // 
             this.AcutalScore.AutoSize = true;
@@ -683,15 +672,21 @@
             this.rtxtbQuestion.TabIndex = 183;
             this.rtxtbQuestion.Text = "";
             // 
-            // flowLayoutPanel1
+            // richTextBox3
             // 
-            this.flowLayoutPanel1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(-1, 791);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(657, 43);
-            this.flowLayoutPanel1.TabIndex = 184;
+            this.richTextBox3.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.richTextBox3.Location = new System.Drawing.Point(-5, 785);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(666, 49);
+            this.richTextBox3.TabIndex = 185;
+            this.richTextBox3.Text = "";
+            // 
+            // pbQuestion
+            // 
+            this.pbQuestion.Location = new System.Drawing.Point(276, 796);
+            this.pbQuestion.Name = "pbQuestion";
+            this.pbQuestion.Size = new System.Drawing.Size(100, 23);
+            this.pbQuestion.TabIndex = 187;
             // 
             // BaordGame
             // 
@@ -699,11 +694,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(660, 827);
+            this.Controls.Add(this.pbQuestion);
             this.Controls.Add(this.Aide);
             this.Controls.Add(this.AcutalScore);
             this.Controls.Add(this.PlayerName);
-            this.Controls.Add(this.nbQuestion);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.rtxtbQuestion);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.Answer4);
@@ -747,6 +741,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tblAnswers);
             this.Controls.Add(this.flwpTextBox);
+            this.Controls.Add(this.richTextBox3);
             this.Font = new System.Drawing.Font("Yu Gothic", 8.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BaordGame";
@@ -800,7 +795,6 @@
         private System.Windows.Forms.Button Aide;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Valider;
-        private System.Windows.Forms.Label nbQuestion;
         private System.Windows.Forms.Label AcutalScore;
         private System.Windows.Forms.Label PlayerName;
         private System.Windows.Forms.Button JFiftyFifty;
@@ -808,7 +802,8 @@
         private System.Windows.Forms.FlowLayoutPanel flwpTextBox;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.RichTextBox rtxtbQuestion;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.ProgressBar pbQuestion;
     }
 }
 
