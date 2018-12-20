@@ -78,7 +78,6 @@
             this.rtxtbQuestion = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.txtB1 = new System.Windows.Forms.TextBox();
-            this.nbQuestion = new System.Windows.Forms.Label();
             this.life1 = new System.Windows.Forms.PictureBox();
             this.life2 = new System.Windows.Forms.PictureBox();
             this.life3 = new System.Windows.Forms.PictureBox();
@@ -688,15 +687,6 @@
             this.txtB1.Size = new System.Drawing.Size(77, 73);
             this.txtB1.TabIndex = 133;
             // 
-            // nbQuestion
-            // 
-            this.nbQuestion.AutoSize = true;
-            this.nbQuestion.Location = new System.Drawing.Point(301, 801);
-            this.nbQuestion.Name = "nbQuestion";
-            this.nbQuestion.Size = new System.Drawing.Size(37, 14);
-            this.nbQuestion.TabIndex = 186;
-            this.nbQuestion.Text = "label2";
-            // 
             // life1
             // 
             this.life1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("life1.BackgroundImage")));
@@ -739,7 +729,6 @@
             this.Controls.Add(this.life3);
             this.Controls.Add(this.life2);
             this.Controls.Add(this.life1);
-            this.Controls.Add(this.nbQuestion);
             this.Controls.Add(this.PlayerName);
             this.Controls.Add(this.AcutalScore);
             this.Controls.Add(this.richTextBox2);
@@ -851,7 +840,6 @@
         private System.Windows.Forms.RichTextBox rtxtbQuestion;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.TextBox txtB1;
-        private System.Windows.Forms.Label nbQuestion;
         private System.Windows.Forms.PictureBox life1;
         private System.Windows.Forms.PictureBox life2;
         private System.Windows.Forms.PictureBox life3;
