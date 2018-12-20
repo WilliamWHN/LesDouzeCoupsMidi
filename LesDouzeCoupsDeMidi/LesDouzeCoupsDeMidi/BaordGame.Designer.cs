@@ -77,7 +77,7 @@
             this.flwpTextBox = new System.Windows.Forms.FlowLayoutPanel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.rtxtbQuestion = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.pbQuestion = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -672,14 +672,14 @@
             this.rtxtbQuestion.TabIndex = 183;
             this.rtxtbQuestion.Text = "";
             // 
-            // richTextBox3
+            // richTextBox2
             // 
-            this.richTextBox3.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.richTextBox3.Location = new System.Drawing.Point(-5, 785);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(666, 49);
-            this.richTextBox3.TabIndex = 185;
-            this.richTextBox3.Text = "";
+            this.richTextBox2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.richTextBox2.Location = new System.Drawing.Point(-5, 785);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(666, 49);
+            this.richTextBox2.TabIndex = 185;
+            this.richTextBox2.Text = "";
             // 
             // pbQuestion
             // 
@@ -741,7 +741,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tblAnswers);
             this.Controls.Add(this.flwpTextBox);
-            this.Controls.Add(this.richTextBox3);
+            this.Controls.Add(this.richTextBox2);
             this.Font = new System.Drawing.Font("Yu Gothic", 8.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BaordGame";
@@ -802,7 +802,7 @@
         private System.Windows.Forms.FlowLayoutPanel flwpTextBox;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.RichTextBox rtxtbQuestion;
-        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.ProgressBar pbQuestion;
     }
 }
