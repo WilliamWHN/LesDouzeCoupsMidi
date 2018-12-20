@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaordGame));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtB1 = new System.Windows.Forms.TextBox();
             this.txtB3 = new System.Windows.Forms.TextBox();
             this.txtB4 = new System.Windows.Forms.TextBox();
             this.txtB5 = new System.Windows.Forms.TextBox();
@@ -75,11 +74,20 @@
             this.JFiftyFifty = new System.Windows.Forms.Button();
             this.tblAnswers = new System.Windows.Forms.TableLayoutPanel();
             this.flwpTextBox = new System.Windows.Forms.FlowLayoutPanel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtxtbAnswerImage = new System.Windows.Forms.RichTextBox();
             this.rtxtbQuestion = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.txtB1 = new System.Windows.Forms.TextBox();
+            this.nbQuestion = new System.Windows.Forms.Label();
+            this.life1 = new System.Windows.Forms.PictureBox();
+            this.life2 = new System.Windows.Forms.PictureBox();
+            this.life3 = new System.Windows.Forms.PictureBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.pbQuestion = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.life1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.life2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.life3)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -88,23 +96,10 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(108, 58);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(457, 362);
+            this.pictureBox1.Size = new System.Drawing.Size(457, 361);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // txtB1
-            // 
-            this.txtB1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.txtB1.Enabled = false;
-            this.txtB1.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtB1.Location = new System.Drawing.Point(108, 58);
-            this.txtB1.Margin = new System.Windows.Forms.Padding(2);
-            this.txtB1.Multiline = true;
-            this.txtB1.Name = "txtB1";
-            this.txtB1.ReadOnly = true;
-            this.txtB1.Size = new System.Drawing.Size(77, 73);
-            this.txtB1.TabIndex = 133;
             // 
             // txtB3
             // 
@@ -593,6 +588,7 @@
             this.Valider.TabIndex = 172;
             this.Valider.Text = "✔";
             this.Valider.UseVisualStyleBackColor = true;
+            this.Valider.Click += new System.EventHandler(this.Valider_Click);
             // 
             // AcutalScore
             // 
@@ -652,13 +648,13 @@
             this.flwpTextBox.Size = new System.Drawing.Size(482, 384);
             this.flwpTextBox.TabIndex = 181;
             // 
-            // richTextBox1
+            // rtxtbAnswerImage
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(421, 437);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(144, 22);
-            this.richTextBox1.TabIndex = 182;
-            this.richTextBox1.Text = "";
+            this.rtxtbAnswerImage.Location = new System.Drawing.Point(421, 437);
+            this.rtxtbAnswerImage.Name = "rtxtbAnswerImage";
+            this.rtxtbAnswerImage.Size = new System.Drawing.Size(144, 22);
+            this.rtxtbAnswerImage.TabIndex = 182;
+            this.rtxtbAnswerImage.Text = "";
             // 
             // rtxtbQuestion
             // 
@@ -672,14 +668,14 @@
             this.rtxtbQuestion.TabIndex = 183;
             this.rtxtbQuestion.Text = "";
             // 
-            // richTextBox3
+            // richTextBox2
             // 
-            this.richTextBox3.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.richTextBox3.Location = new System.Drawing.Point(-5, 785);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(666, 49);
-            this.richTextBox3.TabIndex = 185;
-            this.richTextBox3.Text = "";
+            this.richTextBox2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.richTextBox2.Location = new System.Drawing.Point(-5, 785);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(666, 49);
+            this.richTextBox2.TabIndex = 185;
+            this.richTextBox2.Text = "";
             // 
             // pbQuestion
             // 
@@ -688,18 +684,80 @@
             this.pbQuestion.Size = new System.Drawing.Size(100, 23);
             this.pbQuestion.TabIndex = 187;
             // 
+            // txtB1
+            // 
+            this.txtB1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.txtB1.Enabled = false;
+            this.txtB1.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtB1.Location = new System.Drawing.Point(108, 58);
+            this.txtB1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtB1.Multiline = true;
+            this.txtB1.Name = "txtB1";
+            this.txtB1.ReadOnly = true;
+            this.txtB1.Size = new System.Drawing.Size(77, 73);
+            this.txtB1.TabIndex = 133;
+            // 
+            // nbQuestion
+            // 
+            this.nbQuestion.AutoSize = true;
+            this.nbQuestion.Location = new System.Drawing.Point(301, 801);
+            this.nbQuestion.Name = "nbQuestion";
+            this.nbQuestion.Size = new System.Drawing.Size(37, 14);
+            this.nbQuestion.TabIndex = 186;
+            this.nbQuestion.Text = "label2";
+            // 
+            // life1
+            // 
+            this.life1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("life1.BackgroundImage")));
+            this.life1.Image = ((System.Drawing.Image)(resources.GetObject("life1.Image")));
+            this.life1.Location = new System.Drawing.Point(421, 465);
+            this.life1.Name = "life1";
+            this.life1.Size = new System.Drawing.Size(19, 23);
+            this.life1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.life1.TabIndex = 187;
+            this.life1.TabStop = false;
+            // 
+            // life2
+            // 
+            this.life2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("life2.BackgroundImage")));
+            this.life2.Image = ((System.Drawing.Image)(resources.GetObject("life2.Image")));
+            this.life2.Location = new System.Drawing.Point(446, 465);
+            this.life2.Name = "life2";
+            this.life2.Size = new System.Drawing.Size(19, 23);
+            this.life2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.life2.TabIndex = 188;
+            this.life2.TabStop = false;
+            // 
+            // life3
+            // 
+            this.life3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("life3.BackgroundImage")));
+            this.life3.Image = ((System.Drawing.Image)(resources.GetObject("life3.Image")));
+            this.life3.Location = new System.Drawing.Point(470, 465);
+            this.life3.Name = "life3";
+            this.life3.Size = new System.Drawing.Size(19, 23);
+            this.life3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.life3.TabIndex = 189;
+            this.life3.TabStop = false;
+            // 
             // BaordGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(660, 827);
+            this.Controls.Add(this.life3);
+            this.Controls.Add(this.life2);
+            this.Controls.Add(this.life1);
+            this.Controls.Add(this.nbQuestion);
+            this.Controls.Add(this.PlayerName);
+            this.Controls.Add(this.AcutalScore);
+            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.pbQuestion);
             this.Controls.Add(this.Aide);
             this.Controls.Add(this.AcutalScore);
             this.Controls.Add(this.PlayerName);
             this.Controls.Add(this.rtxtbQuestion);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtxtbAnswerImage);
             this.Controls.Add(this.Answer4);
             this.Controls.Add(this.Answer2);
             this.Controls.Add(this.Answer1);
@@ -748,6 +806,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Les Douze Coups de Midi";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.life1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.life2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.life3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -756,7 +817,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtB1;
         private System.Windows.Forms.TextBox txtB3;
         private System.Windows.Forms.TextBox txtB4;
         private System.Windows.Forms.TextBox txtB5;
@@ -800,8 +860,14 @@
         private System.Windows.Forms.Button JFiftyFifty;
         private System.Windows.Forms.TableLayoutPanel tblAnswers;
         private System.Windows.Forms.FlowLayoutPanel flwpTextBox;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtxtbAnswerImage;
         private System.Windows.Forms.RichTextBox rtxtbQuestion;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.TextBox txtB1;
+        private System.Windows.Forms.Label nbQuestion;
+        private System.Windows.Forms.PictureBox life1;
+        private System.Windows.Forms.PictureBox life2;
+        private System.Windows.Forms.PictureBox life3;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.ProgressBar pbQuestion;
     }
