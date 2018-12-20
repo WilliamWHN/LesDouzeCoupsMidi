@@ -11,6 +11,8 @@
 
 #region using references
 using System;
+using System.IO;
+using System.Xml.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,9 +35,8 @@ namespace LesDouzeCoupsDeMidi
         #region  private attributes
         private List<int> txtbAffichee = new List<int>();
         private List<Question> listQuestions = new List<Question>();
-        private WindowsMediaPlayer MusicPlayer = new WindowsMediaPlayer();
-        private int ms = 0;
         private int s = 0;
+        private string imageName;
         private int m = 0;
         private bool[] arrayBoolButton = new bool[] {true,true,true,true};
         private int question = 0;
@@ -53,6 +54,11 @@ namespace LesDouzeCoupsDeMidi
             tblAnswers.Controls.Add(Answer1); tblAnswers.Controls.Add(Answer2); tblAnswers.Controls.Add(Answer3); tblAnswers.Controls.Add(Answer4);
             TimerGame.Interval = 1000;
             TimerGame.Start();
+            var rand = new Random();
+            var files = Directory.GetFiles(Directory.GetCurrentDirectory() + @"/Images");
+            string imagePath = files[rand.Next(files.Length)];
+            pictureBox1.Image = System.Drawing.Image.FromFile(imagePath);
+            imageName = (imagePath.Split('\\').Last()).Split('.').First();
         }
 
 
@@ -67,14 +73,11 @@ namespace LesDouzeCoupsDeMidi
             listQuestions.Shuffle<Question>();
             listQuestions.RemoveRange(30, listQuestions.Count() - 30);
             DisplayQuestion();
-            nbQuestion.Text = "Question " + question + "/30";
-            AcutalScore.Text = "Bonne réponse : " + CorrectAnswer + "/30";
-            PlayerName.Text = "Jeu de " + playername;
         }
 
         private void DisplayQuestion()
         {
-            nbQuestion.Text = "Question " + question + "/30";
+            nbQuestion.Text = "Question " + (question + 1) + "/30";
             AcutalScore.Text = "Bonne réponse : " + CorrectAnswer + "/30";
             PlayerName.Text = "Jeu de " + playername;
             Answer1.Enabled = true;
@@ -131,6 +134,7 @@ namespace LesDouzeCoupsDeMidi
                 }
             }
         }
+       
         /// <summary>
         /// Display a timer in the game
         /// </summary>
@@ -409,6 +413,85 @@ namespace LesDouzeCoupsDeMidi
             }
             JFiftyFifty.Visible = false;
         }
+
+        private void Valider_Click(object sender, EventArgs e)
+        {
+            int nbCharGuessedImage;
+            int nbCharImageName;
+            string guessedImage;
+            string[] words;
+
+            nbCharImageName = imageName.Length;
+            imageName = SortString(imageName.ToLower());
+            imageName = noDups(imageName);
+
+
+            guessedImage = rtxtbAnswerImage.Text;
+            nbCharGuessedImage = guessedImage.Length;      
+            words = guessedImage.Split(' ');
+            if(words[0].ToLower() == "les" || words[0].ToLower() == "le" || words[0].ToLower() == "la")
+            {
+                words[0] = "";
+            }
+            foreach(string word in words)
+            {
+                guessedImage = guessedImage + word;
+            }
+
+      
+            guessedImage = SortString(guessedImage.ToLower());
+            guessedImage = noDups(guessedImage);
+
+           
+            if (nbCharGuessedImage <= nbCharImageName - 4 || !imageName.Contains(guessedImage))
+            {
+                switch (playerTry)
+                {
+                    case 1:
+                        life1.Visible = false;
+                        MessageBox.Show("You lose (à implementer:exit)");
+                        break;
+                    case 2:
+                        life2.Visible = false;
+                        playerTry--;
+                        break;
+                    case 3:
+                        life3.Visible = false;
+                        playerTry--;
+                        break;
+                    default:
+                        break;
+                }
+                
+            }   
+            else if (imageName.Contains(guessedImage))
+            {
+                MessageBox.Show("You WIN !");
+            }
+
+        }
+
+        static string SortString(string input)
+        {
+            char[] characters = input.ToArray();
+            Array.Sort(characters);
+            return new string(characters);
+        }
+
+        public string noDups(string word)
+        {
+            string table = "";
+
+            foreach (var character in word)
+            {
+                if (table.IndexOf(character) == -1)
+                {
+                    table += character; // would this count as a buffer storage?
+                }
+            }
+            return table;
+        }
+
     }
 
 
