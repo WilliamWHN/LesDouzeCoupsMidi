@@ -77,23 +77,31 @@ namespace LesDouzeCoupsDeMidi
 
         private void DisplayQuestion()
         {
-            nbQuestion.Text = "Question " + (question + 1) + "/30";
-            AcutalScore.Text = "Bonne réponse : " + CorrectAnswer + "/30";
-            PlayerName.Text = "Jeu de " + playername;
-            Answer1.Enabled = true;
-            Answer2.Enabled = true;
-            Answer3.Enabled = true;
-            Answer4.Enabled = true;
-            Answer1.BackColor = Color.RoyalBlue;
-            Answer2.BackColor = Color.RoyalBlue;
-            Answer3.BackColor = Color.RoyalBlue;
-            Answer4.BackColor = Color.RoyalBlue;
-            rtxtbQuestion.Text = listQuestions[question].getQuestion.ToString();
-            Answer1.Text = listQuestions[question].Answers[0].ToString();
-            Answer2.Text = listQuestions[question].Answers[1].ToString();
-            Answer3.Text = listQuestions[question].Answers[2].ToString();
-            Answer4.Text = listQuestions[question].Answers[3].ToString();
-
+            if (question + 1 >= 31)
+            {
+                MessageBox.Show("rep couz");
+            }
+            else
+            {
+                AcutalScore.Text = "Bonne réponse : " + CorrectAnswer + "/30";
+                PlayerName.Text = "Jeu de " + playername;
+                Answer1.Enabled = true;
+                Answer2.Enabled = true;
+                Answer3.Enabled = true;
+                Answer4.Enabled = true;
+                Answer1.BackColor = Color.RoyalBlue;
+                Answer2.BackColor = Color.RoyalBlue;
+                Answer3.BackColor = Color.RoyalBlue;
+                Answer4.BackColor = Color.RoyalBlue;
+                rtxtbQuestion.Text = listQuestions[question].getQuestion.ToString();
+                Answer1.Text = listQuestions[question].Answers[0].ToString();
+                Answer2.Text = listQuestions[question].Answers[1].ToString();
+                Answer3.Text = listQuestions[question].Answers[2].ToString();
+                Answer4.Text = listQuestions[question].Answers[3].ToString();
+                pbQuestion.Minimum = 0;
+                pbQuestion.Maximum = 30;
+                pbQuestion.Value += 1;
+            }
         }
 
         /// <summary>
@@ -160,6 +168,7 @@ namespace LesDouzeCoupsDeMidi
             string TrueAnswer = listQuestions[question].getAnswer.ToString();
             string ex = TrueAnswer;
             TrueAnswer = Regex.Replace(TrueAnswer, "[^a-zA-Z0-9_]", "");
+           
             if (TrueAnswer.Contains(Answer))
             {
                 question++;
@@ -171,7 +180,7 @@ namespace LesDouzeCoupsDeMidi
             {
                 question++;
                 throw new Exception(ex);
-            }           
+            }
         }
 
         private async void Answer1_Click(object sender, EventArgs e)
@@ -221,6 +230,8 @@ namespace LesDouzeCoupsDeMidi
                     await Task.Delay(1500, cancellationToken);
                     for (int i = 0; i < 4; i++) { arrayBoolButton[i] = true; }
                     DisplayQuestion();
+                    
+
                 }
             }
         }

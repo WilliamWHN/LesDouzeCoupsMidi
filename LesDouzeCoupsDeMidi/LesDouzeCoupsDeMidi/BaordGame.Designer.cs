@@ -81,6 +81,7 @@
             this.life1 = new System.Windows.Forms.PictureBox();
             this.life2 = new System.Windows.Forms.PictureBox();
             this.life3 = new System.Windows.Forms.PictureBox();
+            this.pbQuestion = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.life1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.life2)).BeginInit();
@@ -674,6 +675,13 @@
             this.richTextBox2.TabIndex = 185;
             this.richTextBox2.Text = "";
             // 
+            // pbQuestion
+            // 
+            this.pbQuestion.Location = new System.Drawing.Point(276, 796);
+            this.pbQuestion.Name = "pbQuestion";
+            this.pbQuestion.Size = new System.Drawing.Size(100, 23);
+            this.pbQuestion.TabIndex = 187;
+            // 
             // txtB1
             // 
             this.txtB1.BackColor = System.Drawing.Color.RoyalBlue;
@@ -732,7 +740,10 @@
             this.Controls.Add(this.PlayerName);
             this.Controls.Add(this.AcutalScore);
             this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.pbQuestion);
             this.Controls.Add(this.Aide);
+            this.Controls.Add(this.AcutalScore);
+            this.Controls.Add(this.PlayerName);
             this.Controls.Add(this.rtxtbQuestion);
             this.Controls.Add(this.rtxtbAnswerImage);
             this.Controls.Add(this.Answer4);
@@ -776,6 +787,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tblAnswers);
             this.Controls.Add(this.flwpTextBox);
+            this.Controls.Add(this.richTextBox2);
             this.Font = new System.Drawing.Font("Yu Gothic", 8.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BaordGame";
@@ -839,6 +851,7 @@
         private System.Windows.Forms.RichTextBox rtxtbAnswerImage;
         private System.Windows.Forms.RichTextBox rtxtbQuestion;
         private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.ProgressBar pbQuestion;
         private System.Windows.Forms.TextBox txtB1;
         private System.Windows.Forms.PictureBox life1;
         private System.Windows.Forms.PictureBox life2;
