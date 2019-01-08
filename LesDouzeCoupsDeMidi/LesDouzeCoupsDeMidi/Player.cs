@@ -10,13 +10,11 @@ namespace LesDouzeCoupsDeMidi
     {
         private string nickname;
         private int score;
-        private TimeSpan elapsedTime;
 
-        public Player(string nickname, int score, TimeSpan elapsedTime)
+        public Player(string nickname, int score)
         {
             this.nickname = nickname;
             this.score = score;
-            this.elapsedTime = elapsedTime;
         }   
 
         public string getNickName
@@ -24,6 +22,10 @@ namespace LesDouzeCoupsDeMidi
             get
             {
                 return this.nickname;
+            }
+            set
+            {
+                this.nickname = value;
             }
         }
 
@@ -36,7 +38,7 @@ namespace LesDouzeCoupsDeMidi
 
             set
             {
-               this.score = score; 
+               this.score = value; 
             }
         }      
     }

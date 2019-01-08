@@ -19,6 +19,7 @@ using System.Data;
 using System.Drawing;
 using System.Threading;
 using System.Linq;
+using Microsoft.VisualBasic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,12 +37,13 @@ namespace LesDouzeCoupsDeMidi
         private List<int> txtbAffichee = new List<int>();
         private List<Question> listQuestions = new List<Question>();
         private int s = 0;
+        private Player player = new Player("", 0);
         private string imageName;
         private int m = 0;
+        private int jokerUsed = 0;
         private bool[] arrayBoolButton = new bool[] {true,true,true,true};
         private int question = 0;
         private int playerTry = 3;
-        private string playername;
         private int CorrectAnswer = 0;
         #endregion private attributes
 
@@ -50,6 +52,10 @@ namespace LesDouzeCoupsDeMidi
         /// </summary>
         public BaordGame()
         {
+            do
+            {
+                player.getNickName = Interaction.InputBox("Veuiller entrer le nom du joueur ", "Entrer un joueur","", 500, 500);
+            } while ((player.getNickName == "") || (player.getNickName == "prénom"));
             InitializeComponent();
             tblAnswers.Controls.Add(Answer1); tblAnswers.Controls.Add(Answer2); tblAnswers.Controls.Add(Answer3); tblAnswers.Controls.Add(Answer4);
             TimerGame.Interval = 1000;
@@ -84,7 +90,7 @@ namespace LesDouzeCoupsDeMidi
             else
             {
                 AcutalScore.Text = "Bonne réponse : " + CorrectAnswer + "/30";
-                PlayerName.Text = "Jeu de " + playername;
+                PlayerName.Text = "Jeu de " + player.getNickName;
                 Answer1.Enabled = true;
                 Answer2.Enabled = true;
                 Answer3.Enabled = true;
@@ -387,12 +393,13 @@ namespace LesDouzeCoupsDeMidi
         }
 
         private void JFiftyFifty_Click(object sender, EventArgs e)
-        {
+        {    
             int nbButton = 1;
             int nbRand;
             int[] nbsRand = new int[2];
             int nbButtonTrueAnswer = 0;
             string TrueAnswer = listQuestions[question].getAnswer.ToString();
+            jokerUsed++;
 
             foreach (Control ctrl in tblAnswers.Controls)
             {
@@ -444,6 +451,7 @@ namespace LesDouzeCoupsDeMidi
             {
                 words[0] = "";
             }
+            guessedImage = "";
             foreach(string word in words)
             {
                 guessedImage = guessedImage + word;
@@ -460,7 +468,7 @@ namespace LesDouzeCoupsDeMidi
                 {
                     case 1:
                         life1.Visible = false;
-                        MessageBox.Show("You lose (à implementer:exit)");
+                        YouLose();
                         break;
                     case 2:
                         life2.Visible = false;
@@ -477,7 +485,7 @@ namespace LesDouzeCoupsDeMidi
             }   
             else if (imageName.Contains(guessedImage))
             {
-                MessageBox.Show("You WIN !");
+                YouWin();
             }
 
         }
@@ -501,6 +509,64 @@ namespace LesDouzeCoupsDeMidi
                 }
             }
             return table;
+        }
+
+        private void YouLose()
+        {
+           
+        }
+
+        private void YouWin()
+        {
+            double tempScore = 0;
+            tempScore = (CorrectAnswer * 10 + (30 - question) * 100) - (m*60 + s)*2;
+            if(jokerUsed == 0)
+            {
+                tempScore = tempScore * 1.5;
+            }
+            else if(jokerUsed == 1)
+            {
+                tempScore = tempScore * 1.25;
+            }
+            player.Score = Convert.ToInt32(tempScore);
+            foreach (Control x in this.Controls)
+            {
+                if (x is TextBox)
+                {            
+                    x.Visible = false;
+                }
+            }
+            TimerGame.Stop();
+            label1.Visible = false;
+            rtxtbAnswerImage.Visible = false;
+            life1.Visible = false;
+            life2.Visible = false;
+            life3.Visible = false;
+            Answer1.Visible = false;
+            Answer2.Visible = false;
+            Answer3.Visible = false;
+            Answer4.Visible = false;
+            JFiftyFifty.Visible = false;
+            Valider.Visible = false;
+            pbQuestion.Visible = false;
+
+            AcutalScore.Visible = false;
+            PlayerName.Visible = false;
+            Aide.Visible = false;
+            rtxtbQuestion.Height = 280;
+            rtxtbQuestion.Text = "              FELICITATIONS ! TU AS TROUVE L'IMAGE \n" +
+                "\n" +
+                "Bonnes réponses : " + CorrectAnswer + "/" + question + "\n" +
+                "Temps utilisé : " + m + ":" + s + "\n" +
+                "Joker utilisés : " + jokerUsed + "/1\n\n" +
+                "                               Score Total : "+ player.Score;
+            
+
+        }
+
+        private void rtxtbQuestion_Enter(object sender, EventArgs e)
+        {
+            ActiveControl = lblTimerGame;
         }
 
     }

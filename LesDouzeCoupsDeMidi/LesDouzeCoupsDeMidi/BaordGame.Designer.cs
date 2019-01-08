@@ -604,7 +604,7 @@
             this.PlayerName.AutoSize = true;
             this.PlayerName.BackColor = System.Drawing.Color.LightSteelBlue;
             this.PlayerName.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerName.Location = new System.Drawing.Point(523, 801);
+            this.PlayerName.Location = new System.Drawing.Point(497, 801);
             this.PlayerName.Name = "PlayerName";
             this.PlayerName.Size = new System.Drawing.Size(80, 18);
             this.PlayerName.TabIndex = 175;
@@ -660,11 +660,14 @@
             this.rtxtbQuestion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtbQuestion.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtbQuestion.ForeColor = System.Drawing.Color.White;
+            this.rtxtbQuestion.HideSelection = false;
             this.rtxtbQuestion.Location = new System.Drawing.Point(82, 505);
             this.rtxtbQuestion.Name = "rtxtbQuestion";
+            this.rtxtbQuestion.ReadOnly = true;
             this.rtxtbQuestion.Size = new System.Drawing.Size(506, 82);
             this.rtxtbQuestion.TabIndex = 183;
             this.rtxtbQuestion.Text = "";
+            this.rtxtbQuestion.Enter += new System.EventHandler(this.rtxtbQuestion_Enter);
             // 
             // richTextBox2
             // 
@@ -674,13 +677,6 @@
             this.richTextBox2.Size = new System.Drawing.Size(666, 49);
             this.richTextBox2.TabIndex = 185;
             this.richTextBox2.Text = "";
-            // 
-            // pbQuestion
-            // 
-            this.pbQuestion.Location = new System.Drawing.Point(276, 796);
-            this.pbQuestion.Name = "pbQuestion";
-            this.pbQuestion.Size = new System.Drawing.Size(100, 23);
-            this.pbQuestion.TabIndex = 187;
             // 
             // txtB1
             // 
@@ -728,6 +724,13 @@
             this.life3.TabIndex = 189;
             this.life3.TabStop = false;
             // 
+            // pbQuestion
+            // 
+            this.pbQuestion.Location = new System.Drawing.Point(282, 799);
+            this.pbQuestion.Name = "pbQuestion";
+            this.pbQuestion.Size = new System.Drawing.Size(100, 23);
+            this.pbQuestion.TabIndex = 187;
+            // 
             // BaordGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -737,9 +740,6 @@
             this.Controls.Add(this.life3);
             this.Controls.Add(this.life2);
             this.Controls.Add(this.life1);
-            this.Controls.Add(this.PlayerName);
-            this.Controls.Add(this.AcutalScore);
-            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.pbQuestion);
             this.Controls.Add(this.Aide);
             this.Controls.Add(this.AcutalScore);
@@ -789,6 +789,7 @@
             this.Controls.Add(this.flwpTextBox);
             this.Controls.Add(this.richTextBox2);
             this.Font = new System.Drawing.Font("Yu Gothic", 8.25F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BaordGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
