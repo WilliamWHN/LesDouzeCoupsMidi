@@ -83,7 +83,7 @@ namespace LesDouzeCoupsDeMidi
             }
             else
             {
-                AcutalScore.Text = "Bonne réponse : " + CorrectAnswer + "/ " + question;
+                AcutalScore.Text = "Bonne réponse : " + CorrectAnswer + " / " + question;
                 PlayerName.Text = "Jeu de " + playername;
                 Answer1.Enabled = true;
                 Answer2.Enabled = true;
