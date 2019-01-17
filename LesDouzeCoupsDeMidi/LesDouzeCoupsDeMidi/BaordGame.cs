@@ -89,7 +89,7 @@ namespace LesDouzeCoupsDeMidi
             }
             else
             {
-                AcutalScore.Text = "Bonne réponse : " + CorrectAnswer + "/30";
+                AcutalScore.Text = "Bonne réponse : " + CorrectAnswer + " / " + question;
                 PlayerName.Text = "Jeu de " + player.getNickName;
                 Answer1.Enabled = true;
                 Answer2.Enabled = true;
@@ -569,6 +569,17 @@ namespace LesDouzeCoupsDeMidi
             ActiveControl = lblTimerGame;
         }
 
+        private void JSkip_Click(object sender, EventArgs e)
+        {
+        
+                question += 1;
+                CorrectAnswer++;
+                DisplayQuestion();
+                rndShowCase();
+                
+                JSkip.Visible = false;
+                  
+        }
     }
 
 

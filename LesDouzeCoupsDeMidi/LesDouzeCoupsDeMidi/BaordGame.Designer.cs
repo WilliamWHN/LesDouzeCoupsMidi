@@ -82,6 +82,7 @@
             this.life2 = new System.Windows.Forms.PictureBox();
             this.life3 = new System.Windows.Forms.PictureBox();
             this.pbQuestion = new System.Windows.Forms.ProgressBar();
+            this.JSkip = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.life1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.life2)).BeginInit();
@@ -726,10 +727,24 @@
             // 
             // pbQuestion
             // 
-            this.pbQuestion.Location = new System.Drawing.Point(282, 799);
+            this.pbQuestion.Location = new System.Drawing.Point(276, 796);
             this.pbQuestion.Name = "pbQuestion";
             this.pbQuestion.Size = new System.Drawing.Size(100, 23);
             this.pbQuestion.TabIndex = 187;
+            // 
+            // JSkip
+            // 
+            this.JSkip.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.JSkip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.JSkip.Font = new System.Drawing.Font("Yu Gothic", 9.75F);
+            this.JSkip.ForeColor = System.Drawing.Color.White;
+            this.JSkip.Location = new System.Drawing.Point(390, 739);
+            this.JSkip.Name = "JSkip";
+            this.JSkip.Size = new System.Drawing.Size(75, 23);
+            this.JSkip.TabIndex = 190;
+            this.JSkip.Text = "Skip";
+            this.JSkip.UseVisualStyleBackColor = false;
+            this.JSkip.Click += new System.EventHandler(this.JSkip_Click);
             // 
             // BaordGame
             // 
@@ -737,6 +752,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(660, 827);
+            this.Controls.Add(this.JSkip);
             this.Controls.Add(this.life3);
             this.Controls.Add(this.life2);
             this.Controls.Add(this.life1);
@@ -857,6 +873,7 @@
         private System.Windows.Forms.PictureBox life1;
         private System.Windows.Forms.PictureBox life2;
         private System.Windows.Forms.PictureBox life3;
+        private System.Windows.Forms.Button JSkip;
     }
 }
 

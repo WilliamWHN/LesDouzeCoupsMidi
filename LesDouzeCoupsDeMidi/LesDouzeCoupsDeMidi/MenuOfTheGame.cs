@@ -31,7 +31,7 @@ namespace LesDouzeCoupsDeMidi
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("Développeur : Esseiva Théo, Hausmann William\n\nTesteur : Favre Zacharie, Mota-Carneiro Rui-Manuel, Decoppet Joris, Golay Maxim, Saraiva Maia Leandro, Hausmann William, Esseiva Théo");
         }
     }
 }
