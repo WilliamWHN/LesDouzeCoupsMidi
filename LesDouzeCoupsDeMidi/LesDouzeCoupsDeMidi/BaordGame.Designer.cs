@@ -62,31 +62,31 @@
             this.txtB2 = new System.Windows.Forms.TextBox();
             this.lblTimerGame = new System.Windows.Forms.Label();
             this.TimerGame = new System.Windows.Forms.Timer(this.components);
-            this.Answer1 = new System.Windows.Forms.Button();
-            this.Answer2 = new System.Windows.Forms.Button();
-            this.Answer3 = new System.Windows.Forms.Button();
-            this.Answer4 = new System.Windows.Forms.Button();
-            this.Aide = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Valider = new System.Windows.Forms.Button();
-            this.AcutalScore = new System.Windows.Forms.Label();
-            this.PlayerName = new System.Windows.Forms.Label();
-            this.JFiftyFifty = new System.Windows.Forms.Button();
+            this.cmdAnswer1 = new System.Windows.Forms.Button();
+            this.cmdAnswer2 = new System.Windows.Forms.Button();
+            this.cmdAnswer3 = new System.Windows.Forms.Button();
+            this.cmdAnswer4 = new System.Windows.Forms.Button();
+            this.cmdHelp = new System.Windows.Forms.Button();
+            this.lblFinalQuestion = new System.Windows.Forms.Label();
+            this.cmdValidate = new System.Windows.Forms.Button();
+            this.lblAcutalScore = new System.Windows.Forms.Label();
+            this.lblPlayerName = new System.Windows.Forms.Label();
+            this.cmdJFiftyFifty = new System.Windows.Forms.Button();
             this.tblAnswers = new System.Windows.Forms.TableLayoutPanel();
             this.flwpTextBox = new System.Windows.Forms.FlowLayoutPanel();
             this.rtxtbAnswerImage = new System.Windows.Forms.RichTextBox();
             this.rtxtbQuestion = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.rtxtbFooter = new System.Windows.Forms.RichTextBox();
             this.txtB1 = new System.Windows.Forms.TextBox();
-            this.life1 = new System.Windows.Forms.PictureBox();
-            this.life2 = new System.Windows.Forms.PictureBox();
-            this.life3 = new System.Windows.Forms.PictureBox();
+            this.lblLife1 = new System.Windows.Forms.PictureBox();
+            this.lblLife2 = new System.Windows.Forms.PictureBox();
+            this.lblLife3 = new System.Windows.Forms.PictureBox();
             this.pbQuestion = new System.Windows.Forms.ProgressBar();
-            this.JSkip = new System.Windows.Forms.Button();
+            this.cmdJSkip = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.life1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.life2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.life3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblLife1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblLife2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblLife3)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -480,7 +480,7 @@
             // lblTimerGame
             // 
             this.lblTimerGame.AutoSize = true;
-            this.lblTimerGame.Location = new System.Drawing.Point(485, 19);
+            this.lblTimerGame.Location = new System.Drawing.Point(316, 744);
             this.lblTimerGame.Name = "lblTimerGame";
             this.lblTimerGame.Size = new System.Drawing.Size(31, 14);
             this.lblTimerGame.TabIndex = 163;
@@ -491,140 +491,140 @@
             // 
             this.TimerGame.Tick += new System.EventHandler(this.TimerGame_Tick);
             // 
-            // Answer1
+            // cmdAnswer1
             // 
-            this.Answer1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.Answer1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Answer1.FlatAppearance.BorderSize = 0;
-            this.Answer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Answer1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Answer1.ForeColor = System.Drawing.Color.White;
-            this.Answer1.Location = new System.Drawing.Point(82, 611);
-            this.Answer1.Name = "Answer1";
-            this.Answer1.Size = new System.Drawing.Size(251, 41);
-            this.Answer1.TabIndex = 165;
-            this.Answer1.Text = "Answer1";
-            this.Answer1.UseVisualStyleBackColor = false;
-            this.Answer1.Click += new System.EventHandler(this.Answer1_Click);
+            this.cmdAnswer1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.cmdAnswer1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.cmdAnswer1.FlatAppearance.BorderSize = 0;
+            this.cmdAnswer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdAnswer1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAnswer1.ForeColor = System.Drawing.Color.White;
+            this.cmdAnswer1.Location = new System.Drawing.Point(82, 611);
+            this.cmdAnswer1.Name = "cmdAnswer1";
+            this.cmdAnswer1.Size = new System.Drawing.Size(251, 41);
+            this.cmdAnswer1.TabIndex = 165;
+            this.cmdAnswer1.Text = "Answer1";
+            this.cmdAnswer1.UseVisualStyleBackColor = false;
+            this.cmdAnswer1.Click += new System.EventHandler(this.CmdAnswer1_Click);
             // 
-            // Answer2
+            // cmdAnswer2
             // 
-            this.Answer2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.Answer2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Answer2.FlatAppearance.BorderSize = 0;
-            this.Answer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Answer2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Answer2.ForeColor = System.Drawing.Color.White;
-            this.Answer2.Location = new System.Drawing.Point(337, 611);
-            this.Answer2.Name = "Answer2";
-            this.Answer2.Size = new System.Drawing.Size(251, 41);
-            this.Answer2.TabIndex = 166;
-            this.Answer2.Text = "Answer2";
-            this.Answer2.UseVisualStyleBackColor = false;
-            this.Answer2.Click += new System.EventHandler(this.Answer2_Click);
+            this.cmdAnswer2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.cmdAnswer2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.cmdAnswer2.FlatAppearance.BorderSize = 0;
+            this.cmdAnswer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdAnswer2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAnswer2.ForeColor = System.Drawing.Color.White;
+            this.cmdAnswer2.Location = new System.Drawing.Point(337, 611);
+            this.cmdAnswer2.Name = "cmdAnswer2";
+            this.cmdAnswer2.Size = new System.Drawing.Size(251, 41);
+            this.cmdAnswer2.TabIndex = 166;
+            this.cmdAnswer2.Text = "Answer2";
+            this.cmdAnswer2.UseVisualStyleBackColor = false;
+            this.cmdAnswer2.Click += new System.EventHandler(this.CmdAnswer2_Click);
             // 
-            // Answer3
+            // cmdAnswer3
             // 
-            this.Answer3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.Answer3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Answer3.FlatAppearance.BorderSize = 0;
-            this.Answer3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Answer3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Answer3.ForeColor = System.Drawing.Color.White;
-            this.Answer3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Answer3.Location = new System.Drawing.Point(82, 655);
-            this.Answer3.Name = "Answer3";
-            this.Answer3.Size = new System.Drawing.Size(251, 41);
-            this.Answer3.TabIndex = 167;
-            this.Answer3.Text = "Answer3";
-            this.Answer3.UseVisualStyleBackColor = false;
-            this.Answer3.Click += new System.EventHandler(this.Answer3_Click);
+            this.cmdAnswer3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.cmdAnswer3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.cmdAnswer3.FlatAppearance.BorderSize = 0;
+            this.cmdAnswer3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdAnswer3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAnswer3.ForeColor = System.Drawing.Color.White;
+            this.cmdAnswer3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.cmdAnswer3.Location = new System.Drawing.Point(82, 655);
+            this.cmdAnswer3.Name = "cmdAnswer3";
+            this.cmdAnswer3.Size = new System.Drawing.Size(251, 41);
+            this.cmdAnswer3.TabIndex = 167;
+            this.cmdAnswer3.Text = "Answer3";
+            this.cmdAnswer3.UseVisualStyleBackColor = false;
+            this.cmdAnswer3.Click += new System.EventHandler(this.CmdAnswer3_Click);
             // 
-            // Answer4
+            // cmdAnswer4
             // 
-            this.Answer4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.Answer4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Answer4.FlatAppearance.BorderSize = 0;
-            this.Answer4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Answer4.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Answer4.ForeColor = System.Drawing.Color.White;
-            this.Answer4.Location = new System.Drawing.Point(337, 655);
-            this.Answer4.Name = "Answer4";
-            this.Answer4.Size = new System.Drawing.Size(251, 41);
-            this.Answer4.TabIndex = 168;
-            this.Answer4.Text = "Answer4";
-            this.Answer4.UseVisualStyleBackColor = false;
-            this.Answer4.Click += new System.EventHandler(this.Answer4_Click);
+            this.cmdAnswer4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.cmdAnswer4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.cmdAnswer4.FlatAppearance.BorderSize = 0;
+            this.cmdAnswer4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdAnswer4.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAnswer4.ForeColor = System.Drawing.Color.White;
+            this.cmdAnswer4.Location = new System.Drawing.Point(337, 655);
+            this.cmdAnswer4.Name = "cmdAnswer4";
+            this.cmdAnswer4.Size = new System.Drawing.Size(251, 41);
+            this.cmdAnswer4.TabIndex = 168;
+            this.cmdAnswer4.Text = "Answer4";
+            this.cmdAnswer4.UseVisualStyleBackColor = false;
+            this.cmdAnswer4.Click += new System.EventHandler(this.CmdAnswer4_Click);
             // 
-            // Aide
+            // cmdHelp
             // 
-            this.Aide.BackColor = System.Drawing.Color.RoyalBlue;
-            this.Aide.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Aide.Location = new System.Drawing.Point(8, 796);
-            this.Aide.Name = "Aide";
-            this.Aide.Size = new System.Drawing.Size(29, 28);
-            this.Aide.TabIndex = 169;
-            this.Aide.Text = "?";
-            this.Aide.UseVisualStyleBackColor = false;
-            this.Aide.Click += new System.EventHandler(this.Aide_Click);
+            this.cmdHelp.BackColor = System.Drawing.Color.RoyalBlue;
+            this.cmdHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdHelp.Location = new System.Drawing.Point(8, 796);
+            this.cmdHelp.Name = "cmdHelp";
+            this.cmdHelp.Size = new System.Drawing.Size(29, 28);
+            this.cmdHelp.TabIndex = 169;
+            this.cmdHelp.Text = "?";
+            this.cmdHelp.UseVisualStyleBackColor = false;
+            this.cmdHelp.Click += new System.EventHandler(this.CmdAide_Click);
             // 
-            // label1
+            // lblFinalQuestion
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(103, 437);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(311, 22);
-            this.label1.TabIndex = 171;
-            this.label1.Text = "Entrez le nom de l\'image pour gagné :";
+            this.lblFinalQuestion.AutoSize = true;
+            this.lblFinalQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFinalQuestion.ForeColor = System.Drawing.Color.White;
+            this.lblFinalQuestion.Location = new System.Drawing.Point(103, 437);
+            this.lblFinalQuestion.Name = "lblFinalQuestion";
+            this.lblFinalQuestion.Size = new System.Drawing.Size(317, 22);
+            this.lblFinalQuestion.TabIndex = 171;
+            this.lblFinalQuestion.Text = "Entrez le nom de l\'image pour gagner :";
             // 
-            // Valider
+            // cmdValidate
             // 
-            this.Valider.Location = new System.Drawing.Point(571, 438);
-            this.Valider.Name = "Valider";
-            this.Valider.Size = new System.Drawing.Size(23, 20);
-            this.Valider.TabIndex = 172;
-            this.Valider.Text = "✔";
-            this.Valider.UseVisualStyleBackColor = true;
-            this.Valider.Click += new System.EventHandler(this.Valider_Click);
+            this.cmdValidate.Location = new System.Drawing.Point(571, 438);
+            this.cmdValidate.Name = "cmdValidate";
+            this.cmdValidate.Size = new System.Drawing.Size(23, 20);
+            this.cmdValidate.TabIndex = 172;
+            this.cmdValidate.Text = "✔";
+            this.cmdValidate.UseVisualStyleBackColor = true;
+            this.cmdValidate.Click += new System.EventHandler(this.CmdValider_Click);
             // 
-            // AcutalScore
+            // lblAcutalScore
             // 
-            this.AcutalScore.AutoSize = true;
-            this.AcutalScore.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.AcutalScore.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AcutalScore.Location = new System.Drawing.Point(70, 801);
-            this.AcutalScore.Name = "AcutalScore";
-            this.AcutalScore.Size = new System.Drawing.Size(96, 18);
-            this.AcutalScore.TabIndex = 174;
-            this.AcutalScore.Text = "Correct answer";
+            this.lblAcutalScore.AutoSize = true;
+            this.lblAcutalScore.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblAcutalScore.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAcutalScore.Location = new System.Drawing.Point(70, 801);
+            this.lblAcutalScore.Name = "lblAcutalScore";
+            this.lblAcutalScore.Size = new System.Drawing.Size(96, 18);
+            this.lblAcutalScore.TabIndex = 174;
+            this.lblAcutalScore.Text = "Correct answer";
             // 
-            // PlayerName
+            // lblPlayerName
             // 
-            this.PlayerName.AutoSize = true;
-            this.PlayerName.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.PlayerName.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerName.Location = new System.Drawing.Point(497, 801);
-            this.PlayerName.Name = "PlayerName";
-            this.PlayerName.Size = new System.Drawing.Size(80, 18);
-            this.PlayerName.TabIndex = 175;
-            this.PlayerName.Text = "Name Player";
+            this.lblPlayerName.AutoSize = true;
+            this.lblPlayerName.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblPlayerName.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerName.Location = new System.Drawing.Point(497, 801);
+            this.lblPlayerName.Name = "lblPlayerName";
+            this.lblPlayerName.Size = new System.Drawing.Size(80, 18);
+            this.lblPlayerName.TabIndex = 175;
+            this.lblPlayerName.Text = "Name Player";
             // 
-            // JFiftyFifty
+            // cmdJFiftyFifty
             // 
-            this.JFiftyFifty.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.JFiftyFifty.FlatAppearance.BorderSize = 0;
-            this.JFiftyFifty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.JFiftyFifty.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JFiftyFifty.ForeColor = System.Drawing.Color.White;
-            this.JFiftyFifty.Location = new System.Drawing.Point(186, 739);
-            this.JFiftyFifty.Name = "JFiftyFifty";
-            this.JFiftyFifty.Size = new System.Drawing.Size(75, 24);
-            this.JFiftyFifty.TabIndex = 177;
-            this.JFiftyFifty.Text = "50/50";
-            this.JFiftyFifty.UseVisualStyleBackColor = false;
-            this.JFiftyFifty.Click += new System.EventHandler(this.JFiftyFifty_Click);
+            this.cmdJFiftyFifty.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.cmdJFiftyFifty.FlatAppearance.BorderSize = 0;
+            this.cmdJFiftyFifty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdJFiftyFifty.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdJFiftyFifty.ForeColor = System.Drawing.Color.White;
+            this.cmdJFiftyFifty.Location = new System.Drawing.Point(186, 739);
+            this.cmdJFiftyFifty.Name = "cmdJFiftyFifty";
+            this.cmdJFiftyFifty.Size = new System.Drawing.Size(75, 24);
+            this.cmdJFiftyFifty.TabIndex = 177;
+            this.cmdJFiftyFifty.Text = "50/50";
+            this.cmdJFiftyFifty.UseVisualStyleBackColor = false;
+            this.cmdJFiftyFifty.Click += new System.EventHandler(this.CmdJFiftyFifty_Click);
             // 
             // tblAnswers
             // 
@@ -668,16 +668,16 @@
             this.rtxtbQuestion.Size = new System.Drawing.Size(506, 82);
             this.rtxtbQuestion.TabIndex = 183;
             this.rtxtbQuestion.Text = "";
-            this.rtxtbQuestion.Enter += new System.EventHandler(this.rtxtbQuestion_Enter);
+            this.rtxtbQuestion.Enter += new System.EventHandler(this.RtxtbQuestion_Enter);
             // 
-            // richTextBox2
+            // rtxtbFooter
             // 
-            this.richTextBox2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.richTextBox2.Location = new System.Drawing.Point(-5, 785);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(666, 49);
-            this.richTextBox2.TabIndex = 185;
-            this.richTextBox2.Text = "";
+            this.rtxtbFooter.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.rtxtbFooter.Location = new System.Drawing.Point(-5, 785);
+            this.rtxtbFooter.Name = "rtxtbFooter";
+            this.rtxtbFooter.Size = new System.Drawing.Size(666, 49);
+            this.rtxtbFooter.TabIndex = 185;
+            this.rtxtbFooter.Text = "";
             // 
             // txtB1
             // 
@@ -692,38 +692,38 @@
             this.txtB1.Size = new System.Drawing.Size(77, 73);
             this.txtB1.TabIndex = 133;
             // 
-            // life1
+            // lblLife1
             // 
-            this.life1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("life1.BackgroundImage")));
-            this.life1.Image = ((System.Drawing.Image)(resources.GetObject("life1.Image")));
-            this.life1.Location = new System.Drawing.Point(421, 465);
-            this.life1.Name = "life1";
-            this.life1.Size = new System.Drawing.Size(19, 23);
-            this.life1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.life1.TabIndex = 187;
-            this.life1.TabStop = false;
+            this.lblLife1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lblLife1.BackgroundImage")));
+            this.lblLife1.Image = ((System.Drawing.Image)(resources.GetObject("lblLife1.Image")));
+            this.lblLife1.Location = new System.Drawing.Point(421, 465);
+            this.lblLife1.Name = "lblLife1";
+            this.lblLife1.Size = new System.Drawing.Size(19, 23);
+            this.lblLife1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.lblLife1.TabIndex = 187;
+            this.lblLife1.TabStop = false;
             // 
-            // life2
+            // lblLife2
             // 
-            this.life2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("life2.BackgroundImage")));
-            this.life2.Image = ((System.Drawing.Image)(resources.GetObject("life2.Image")));
-            this.life2.Location = new System.Drawing.Point(446, 465);
-            this.life2.Name = "life2";
-            this.life2.Size = new System.Drawing.Size(19, 23);
-            this.life2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.life2.TabIndex = 188;
-            this.life2.TabStop = false;
+            this.lblLife2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lblLife2.BackgroundImage")));
+            this.lblLife2.Image = ((System.Drawing.Image)(resources.GetObject("lblLife2.Image")));
+            this.lblLife2.Location = new System.Drawing.Point(446, 465);
+            this.lblLife2.Name = "lblLife2";
+            this.lblLife2.Size = new System.Drawing.Size(19, 23);
+            this.lblLife2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.lblLife2.TabIndex = 188;
+            this.lblLife2.TabStop = false;
             // 
-            // life3
+            // lblLife3
             // 
-            this.life3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("life3.BackgroundImage")));
-            this.life3.Image = ((System.Drawing.Image)(resources.GetObject("life3.Image")));
-            this.life3.Location = new System.Drawing.Point(470, 465);
-            this.life3.Name = "life3";
-            this.life3.Size = new System.Drawing.Size(19, 23);
-            this.life3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.life3.TabIndex = 189;
-            this.life3.TabStop = false;
+            this.lblLife3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lblLife3.BackgroundImage")));
+            this.lblLife3.Image = ((System.Drawing.Image)(resources.GetObject("lblLife3.Image")));
+            this.lblLife3.Location = new System.Drawing.Point(470, 465);
+            this.lblLife3.Name = "lblLife3";
+            this.lblLife3.Size = new System.Drawing.Size(19, 23);
+            this.lblLife3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.lblLife3.TabIndex = 189;
+            this.lblLife3.TabStop = false;
             // 
             // pbQuestion
             // 
@@ -732,19 +732,20 @@
             this.pbQuestion.Size = new System.Drawing.Size(100, 23);
             this.pbQuestion.TabIndex = 187;
             // 
-            // JSkip
+            // cmdJSkip
             // 
-            this.JSkip.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.JSkip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.JSkip.Font = new System.Drawing.Font("Yu Gothic", 9.75F);
-            this.JSkip.ForeColor = System.Drawing.Color.White;
-            this.JSkip.Location = new System.Drawing.Point(390, 739);
-            this.JSkip.Name = "JSkip";
-            this.JSkip.Size = new System.Drawing.Size(75, 23);
-            this.JSkip.TabIndex = 190;
-            this.JSkip.Text = "Skip";
-            this.JSkip.UseVisualStyleBackColor = false;
-            this.JSkip.Click += new System.EventHandler(this.JSkip_Click);
+            this.cmdJSkip.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.cmdJSkip.FlatAppearance.BorderSize = 0;
+            this.cmdJSkip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdJSkip.Font = new System.Drawing.Font("Yu Gothic", 9.75F);
+            this.cmdJSkip.ForeColor = System.Drawing.Color.White;
+            this.cmdJSkip.Location = new System.Drawing.Point(390, 739);
+            this.cmdJSkip.Name = "cmdJSkip";
+            this.cmdJSkip.Size = new System.Drawing.Size(75, 23);
+            this.cmdJSkip.TabIndex = 190;
+            this.cmdJSkip.Text = "SKIP";
+            this.cmdJSkip.UseVisualStyleBackColor = false;
+            this.cmdJSkip.Click += new System.EventHandler(this.CmdJSkip_Click);
             // 
             // BaordGame
             // 
@@ -752,23 +753,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(660, 827);
-            this.Controls.Add(this.JSkip);
-            this.Controls.Add(this.life3);
-            this.Controls.Add(this.life2);
-            this.Controls.Add(this.life1);
+            this.Controls.Add(this.cmdJSkip);
+            this.Controls.Add(this.lblLife3);
+            this.Controls.Add(this.lblLife2);
+            this.Controls.Add(this.lblLife1);
             this.Controls.Add(this.pbQuestion);
-            this.Controls.Add(this.Aide);
-            this.Controls.Add(this.AcutalScore);
-            this.Controls.Add(this.PlayerName);
+            this.Controls.Add(this.cmdHelp);
+            this.Controls.Add(this.lblAcutalScore);
+            this.Controls.Add(this.lblPlayerName);
             this.Controls.Add(this.rtxtbQuestion);
             this.Controls.Add(this.rtxtbAnswerImage);
-            this.Controls.Add(this.Answer4);
-            this.Controls.Add(this.Answer2);
-            this.Controls.Add(this.Answer1);
-            this.Controls.Add(this.Answer3);
-            this.Controls.Add(this.JFiftyFifty);
-            this.Controls.Add(this.Valider);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmdAnswer4);
+            this.Controls.Add(this.cmdAnswer2);
+            this.Controls.Add(this.cmdAnswer1);
+            this.Controls.Add(this.cmdAnswer3);
+            this.Controls.Add(this.cmdJFiftyFifty);
+            this.Controls.Add(this.cmdValidate);
+            this.Controls.Add(this.lblFinalQuestion);
             this.Controls.Add(this.lblTimerGame);
             this.Controls.Add(this.txtB2);
             this.Controls.Add(this.txtB26);
@@ -803,17 +804,19 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tblAnswers);
             this.Controls.Add(this.flwpTextBox);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.rtxtbFooter);
             this.Font = new System.Drawing.Font("Yu Gothic", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(676, 866);
+            this.MinimumSize = new System.Drawing.Size(676, 866);
             this.Name = "BaordGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Les Douze Coups de Midi";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.life1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.life2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.life3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblLife1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblLife2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblLife3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -853,27 +856,27 @@
         private System.Windows.Forms.TextBox txtB2;
         private System.Windows.Forms.Label lblTimerGame;
         private System.Windows.Forms.Timer TimerGame;
-        private System.Windows.Forms.Button Answer1;
-        private System.Windows.Forms.Button Answer2;
-        private System.Windows.Forms.Button Answer3;
-        private System.Windows.Forms.Button Answer4;
-        private System.Windows.Forms.Button Aide;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Valider;
-        private System.Windows.Forms.Label AcutalScore;
-        private System.Windows.Forms.Label PlayerName;
-        private System.Windows.Forms.Button JFiftyFifty;
+        private System.Windows.Forms.Button cmdAnswer1;
+        private System.Windows.Forms.Button cmdAnswer2;
+        private System.Windows.Forms.Button cmdAnswer3;
+        private System.Windows.Forms.Button cmdAnswer4;
+        private System.Windows.Forms.Button cmdHelp;
+        private System.Windows.Forms.Label lblFinalQuestion;
+        private System.Windows.Forms.Button cmdValidate;
+        private System.Windows.Forms.Label lblAcutalScore;
+        private System.Windows.Forms.Label lblPlayerName;
+        private System.Windows.Forms.Button cmdJFiftyFifty;
         private System.Windows.Forms.TableLayoutPanel tblAnswers;
         private System.Windows.Forms.FlowLayoutPanel flwpTextBox;
         private System.Windows.Forms.RichTextBox rtxtbAnswerImage;
         private System.Windows.Forms.RichTextBox rtxtbQuestion;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox rtxtbFooter;
         private System.Windows.Forms.ProgressBar pbQuestion;
         private System.Windows.Forms.TextBox txtB1;
-        private System.Windows.Forms.PictureBox life1;
-        private System.Windows.Forms.PictureBox life2;
-        private System.Windows.Forms.PictureBox life3;
-        private System.Windows.Forms.Button JSkip;
+        private System.Windows.Forms.PictureBox lblLife1;
+        private System.Windows.Forms.PictureBox lblLife2;
+        private System.Windows.Forms.PictureBox lblLife3;
+        private System.Windows.Forms.Button cmdJSkip;
     }
 }
 

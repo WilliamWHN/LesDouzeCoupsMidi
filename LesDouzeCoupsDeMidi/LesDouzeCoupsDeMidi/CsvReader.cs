@@ -38,7 +38,7 @@ namespace LesDouzeCoupsDeMidi
         }
         #endregion constructor
 
-        #region private methods
+        #region private method
         /// <summary>
         /// this method is used to take a choosen line in the csv file
         /// </summary>
@@ -61,7 +61,7 @@ namespace LesDouzeCoupsDeMidi
 
             return data[line]; //take the choosen line in the array
         }
-        #endregion private methods
+        #endregion private method
 
         #region public methods
         /// <summary>
