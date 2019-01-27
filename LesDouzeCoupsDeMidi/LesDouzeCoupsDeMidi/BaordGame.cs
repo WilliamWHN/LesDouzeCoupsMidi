@@ -72,7 +72,7 @@ namespace LesDouzeCoupsDeMidi
             var rand = new Random();
 
             //get a random image in the directory located in debug
-            var files = Directory.GetFiles(Directory.GetCurrentDirectory() + @"/Images");
+            var files = Directory.GetFiles(Directory.GetCurrentDirectory() + @"../../../Images");
             string imagePath = files[rand.Next(files.Length)];
             pictureBox1.Image = System.Drawing.Image.FromFile(imagePath);
             imageName = (imagePath.Split('\\').Last()).Split('.').First();
